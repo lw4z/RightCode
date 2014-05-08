@@ -75,11 +75,11 @@ public class RepositorioFiltroOracle implements IRepositorioFiltro {
 	public void InstalarFiltro() throws SQLException{
 		Connection con = null;
 		try {
-		    String sql1 = "create table filtro" +
-	                   "(codigo_filtro number(5) primary key ,"
-	                   + "nome_filtro varchar2(100) not null,"
-	                   + "conteudo_filtro varchar2(1000) not null,"
-	                   + "codigo_usuario number(5),"
+		    String sql1 = "create table if not exists filtro" +
+	                   "(codigo_filtro int(5) primary key ,"
+	                   + "nome_filtro varchar(100) not null,"
+	                   + "conteudo_filtro varchar(1000) not null,"
+	                   + "codigo_usuario int(5),"
 	                   + "foreign key(codigo_usuario) references usuario(codigo_usuario) on delete cascade)";
 		   
 			con = this.con.getConexao();

@@ -80,11 +80,11 @@ public class RepositorioAlunoOracle implements IRepositorioAluno {
 	public void InstalarAluno() throws SQLException{
 		Connection con = null;
 		try {
-		    String sql1 = "create table aluno" +
-	                   "(codigo_aluno number(5) primary key ," +
-	                   "nome_aluno varchar2(100) not null ,"+
-	                   "turma varchar2(50) not null,"
-	                   + "codigo_disciplina number(5),"
+		    String sql1 = "create table if not exists aluno" +
+	                   "(codigo_aluno int(5) primary key ," +
+	                   "nome_aluno varchar(100) not null ,"+
+	                   "turma varchar(50) not null,"
+	                   + "codigo_disciplina int(5),"
 	                   + "foreign key(codigo_disciplina) references disciplina(codigo_disciplina) on delete cascade)";
 		    
 			con = this.con.getConexao();

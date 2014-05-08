@@ -10,7 +10,7 @@ public class ConnectionFactoryOracle {
 		//Acrescentar password na String senha para acesso ao oracle
 		//String senha = "linuxuser";
 		//"jdbc:oracle:thin:@localhost:1521:xe", "lw4z","linuxuser"
-			return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "lw4z","linuxuser");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/TESTE", "root","");
 			
 		
 		

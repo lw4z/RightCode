@@ -13,8 +13,8 @@ import br.fafica.pi1.rightcode.factory.ConnectionFactoryOracle;
 
 public class RepositorioUsuarioOracle implements IRepositorioUsuario {
 	
-	private ConnectionFactoryOracle con;
-	private Statement entrada;
+	static ConnectionFactoryOracle con;
+	static Statement entrada;
 	
 	public RepositorioUsuarioOracle(ConnectionFactoryOracle oracle){
 		this.con=oracle;
@@ -87,9 +87,9 @@ public class RepositorioUsuarioOracle implements IRepositorioUsuario {
 	public void InstalarUsuario() throws SQLException {
 		Connection con = null;
 		try {
-		    String sql1 = "create table usuario" +
-	                   "(codigo_usuario number(5) primary key ," +
-	                   "nome_usuario varchar2(100) not null)";
+		    String sql1 = "create table if not exists usuario" +
+	                   "(codigo_usuario int(5) primary key ," +
+	                   "nome_usuario varchar(100) not null)";
 		    			
 			con = this.con.getConexao();
 			entrada = con.createStatement();

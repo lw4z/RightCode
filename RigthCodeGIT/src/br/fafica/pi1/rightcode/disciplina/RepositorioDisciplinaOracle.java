@@ -83,11 +83,11 @@ public class RepositorioDisciplinaOracle implements IRepositorioDisciplina{
 	public void InstalarDisciplina() throws SQLException {
 			Connection con = null;
 			try {
-			    String sql1 = "create table disciplina" +
-		                   "(codigo_disciplina number(5) primary key ," +
-		                   "nome_disciplina varchar2(50) not null," +
-		                   "descricao_disciplina varchar2(100),"
-		                   + "codigo_usuario number(5),"
+			    String sql1 = "create table if not exists disciplina" +
+		                   "(codigo_disciplina int(5) primary key ," +
+		                   "nome_disciplina varchar(50) not null," +
+		                   "descricao_disciplina varchar(100),"
+		                   + "codigo_usuario int(5),"
 		                   + "foreign key(codigo_usuario) references usuario(codigo_usuario) on delete cascade)";
 			    
 			    
