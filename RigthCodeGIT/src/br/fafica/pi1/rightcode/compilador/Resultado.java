@@ -1,6 +1,6 @@
 package br.fafica.pi1.rightcode.compilador;
 
-import br.fafica.pi1.rightcode.aluno.Aluno;
+//import br.fafica.pi1.rightcode.aluno.Aluno;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,17 +13,17 @@ public class Resultado {
 	private ArrayList <BuscaFiltro> buscaFiltro;
 	private Date data;
 	private String erro;
-        private Aluno aluno;
+      //  private Aluno aluno;
 
    
 	
-	public Resultado(String caminho,boolean compilou,String erro,Aluno aluno){
+	public Resultado(String caminho,boolean compilou,String erro){
 		if(compilou){
 			this.compilou = "Arquivo Compilador com Sucesso";
 		}else{
 			this.compilou = "Arquivo Não compilado";
 		}
-		this.aluno=aluno;
+		//this.aluno=aluno;
 		this.caminho = caminho;
 		this.buscaFiltro = null;
 		this.data = new Date();
@@ -34,13 +34,13 @@ public class Resultado {
 		return caminho;
 	}
         
-        public Aluno getAluno() {
-        return aluno;
-        }
+        //public Aluno getAluno() {
+       // return aluno;
+       // }
         
-        public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
+       // public void setAluno(Aluno aluno) {
+        //this.aluno = aluno;
+    //}
 
 	public void setCaminho(String caminho) {
 		this.caminho = caminho;
@@ -89,10 +89,10 @@ public class Resultado {
 	public String toString(){
 		if(buscaFiltro == null){
 			return "####################################################\n"+
-					"Data: "+this.data +"\n"+this.aluno+"\nCaminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
+					"Data: "+this.data +"\nCaminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
 		}else{
 			return "####################################################\n"+
-					"Data: "+this.data + "\n"+this.aluno+"\nCaminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
+					"Data: "+this.data +"\nCaminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
 					"\n"+arrayString()+""+this.erro;
 		}
 	}

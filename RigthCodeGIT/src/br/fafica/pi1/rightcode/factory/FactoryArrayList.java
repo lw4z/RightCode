@@ -1,7 +1,7 @@
 package br.fafica.pi1.rightcode.factory;
 
-import br.fafica.pi1.rightcode.aluno.IRepositorioAluno;
-import br.fafica.pi1.rightcode.aluno.RepositorioAlunoArrayList;
+//import br.fafica.pi1.rightcode.aluno.IRepositorioAluno;
+//import br.fafica.pi1.rightcode.aluno.RepositorioAlunoArrayList;
 import br.fafica.pi1.rightcode.disciplina.IRepositorioDisciplina;
 import br.fafica.pi1.rightcode.disciplina.RepositorioDisciplinaArrayList;
 import br.fafica.pi1.rightcode.filtro.IRepositorioFiltro;
@@ -14,7 +14,7 @@ public class FactoryArrayList implements IFactory {
 	
 	private IRepositorioUsuario repositorioUsuario;
 	private IRepositorioDisciplina repositorioDisciplina;
-	private IRepositorioAluno repositorioAluno;
+	//private IRepositorioAluno repositorioAluno;
 	private IRepositorioFiltro repositorioFiltro;
 
 	@Override
@@ -31,12 +31,12 @@ public class FactoryArrayList implements IFactory {
 		return this.repositorioDisciplina;
 	}
 
-	@Override
-	public IRepositorioAluno getRepositorioAluno() {
+	//@Override
+	/*public IRepositorioAluno getRepositorioAluno() {
 		if(this.repositorioAluno == null)
 			this.repositorioAluno=new RepositorioAlunoArrayList();
 		return this.repositorioAluno;
-	}
+	}*/
 
 	@Override
 	public IRepositorioFiltro getRepositorioFiltro() {

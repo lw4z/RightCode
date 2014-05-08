@@ -3,7 +3,7 @@ package br.fafica.pi1.rightcode.telas;
 
 
 
-import br.fafica.pi1.rightcode.aluno.Aluno;
+//import br.fafica.pi1.rightcode.aluno.Aluno;
 import br.fafica.pi1.rightcode.compilador.Compilador;
 import br.fafica.pi1.rightcode.compilador.Resultado;
 import br.fafica.pi1.rightcode.disciplina.Disciplina;
@@ -59,7 +59,7 @@ public class Compiler extends javax.swing.JFrame {
     private Fachada fachada;
     private Usuario usuario;
     private Disciplina disciplina;
-    private Aluno aluno;
+    //private Aluno aluno;
     private ArrayList <Filtro> arrayFiltro;
     /**
      * Creas new form Compilador
@@ -67,7 +67,7 @@ public class Compiler extends javax.swing.JFrame {
     public Compiler() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.aluno=aluno;
+//        this.aluno=aluno;
         fachada = Fachada.getInstancia();
         arrayFiltro = new ArrayList<>();
        
@@ -110,13 +110,9 @@ public class Compiler extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         acessoFiltros = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabelaDisciplina = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabelaAluno = new javax.swing.JTable();
         adcionarDisciplina = new javax.swing.JButton();
-        adicionarAluno = new javax.swing.JButton();
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -213,8 +209,6 @@ public class Compiler extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Selecione o Aluno ");
-
         jScrollPane3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jScrollPane3MouseClicked(evt);
@@ -246,48 +240,10 @@ public class Compiler extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tabelaDisciplina);
 
-        jScrollPane2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane2MouseClicked(evt);
-            }
-        });
-
-        tabelaAluno.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Nome Aluno", "Cod.Disciplina"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tabelaAluno);
-
         adcionarDisciplina.setText("Adicionar Disciplina");
         adcionarDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adcionarDisciplinaActionPerformed(evt);
-            }
-        });
-
-        adicionarAluno.setText("Adicionar Aluno");
-        adicionarAluno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adicionarAlunoActionPerformed(evt);
             }
         });
 
@@ -322,28 +278,16 @@ public class Compiler extends javax.swing.JFrame {
                         .addComponent(jLabel2)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(adicionarAluno)
-                                .addGap(62, 62, 62)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(112, 564, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(137, 137, 137)
                         .addComponent(acessoFiltros)
                         .addGap(35, 35, 35))))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {adcionarDisciplina, adicionarAluno});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -351,7 +295,6 @@ public class Compiler extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -361,13 +304,9 @@ public class Compiler extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(adicionarAluno)
-                            .addComponent(adcionarDisciplina))
+                        .addComponent(adcionarDisciplina)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -385,28 +324,28 @@ public class Compiler extends javax.swing.JFrame {
     
         try {
           
-            Compilador compilador = new Compilador(arrayFiltro,AlunoSelecionado());
+            Compilador compilador = new Compilador(arrayFiltro);
             UtilArquivo dell = new UtilArquivo();
             dell.deletarCriarArquvo();
             compilador.Compilar(Caminho());
             CampoResultado.setText(ArquivoResultado());
         
-        } catch (AlunolistaVaziaException ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } /*catch (AlunolistaVaziaException ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage());
         } catch (SQLException ex) {
-        	ex.printStackTrace();
-        	JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (CaminhoNaoEncontraException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, ex.getMessage());
+        }*/ catch (CaminhoNaoEncontraException ex) {
         	JOptionPane.showMessageDialog(this, ex.getMessage());
         } catch (JavaException ex) {
         	JOptionPane.showMessageDialog(this, ex.getMessage());
         } catch (IOException ex) {
         	JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (AlunoNaoEncontradoException ex) {
-        	JOptionPane.showMessageDialog(this, ex.getMessage());
+        } /*catch (AlunoNaoEncontradoException ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage());
         } catch (CodigoInvalidoException ex) {
-        	JOptionPane.showMessageDialog(this, ex.getMessage());
-        }catch (ArrayIndexOutOfBoundsException ex){
+        JOptionPane.showMessageDialog(this, ex.getMessage());
+        }*/catch (ArrayIndexOutOfBoundsException ex){
                     this.setEnabled(true);
                     JOptionPane.showMessageDialog(null,"Nenhum Aluno foi selecionada!");
                     
@@ -445,53 +384,6 @@ public class Compiler extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_jScrollPane3MouseClicked
-
-    private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
-        try {
-            carregarTabelaAluno();
-        } catch (AlunolistaVaziaException ex) {
-            JOptionPane.showMessageDialog(this,ex.getMessage());
-        } catch (SQLException ex) {
-        	ex.printStackTrace();
-			JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }//GEN-LAST:event_jScrollPane2MouseClicked
-
-    private void adicionarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarAlunoActionPerformed
-       this.setEnabled(false);
-       System.out.println("DISCIPLINA TABELA: " + tabelaDisciplina.getSelectedRow());
-        try {
-            if(BuscaDisciplina() == null){
-                JOptionPane.showMessageDialog(null,"Não existem disciplinas!");
-                this.setEnabled(true);
-                
-                
-            }else{
-                try {
-                    new TelaNovoAluno(this,DisciplinaSelecionada()).setVisible(true);
-                } catch (DisciplinaListaVaziaException ex) {
-                    Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                	ex.printStackTrace();
-        			JOptionPane.showMessageDialog(null, ex.getMessage());
-                } catch (DisciplinaNaoEncontradaException ex) {
-                    Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (CodigoInvalidoException ex) {
-                    Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ArrayIndexOutOfBoundsException ex){
-                    this.setEnabled(true);
-                    JOptionPane.showMessageDialog(null,"Nenhuma disciplina foi selecionada!");
-                    
-                }
-            }} catch (DisciplinaListaVaziaException ex) {
-            JOptionPane.showMessageDialog(null,ex.getMessage());
-        } catch (SQLException ex) {
-        	ex.printStackTrace();
-			JOptionPane.showMessageDialog(null, ex.getMessage());
-        }finally{
-             this.setEnabled(true);
-        }
-    }//GEN-LAST:event_adicionarAlunoActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
          this.telaAnt.setEnabled(true);
@@ -627,33 +519,33 @@ public class Compiler extends javax.swing.JFrame {
     
 
     }
-    public void carregarTabelaAluno() throws AlunolistaVaziaException, SQLException{
-        // Fachada fachada = Fachada.getInstancia();
-        ArrayList<Aluno> listaAluno = new ArrayList<Aluno>();
-        listaAluno = fachada.ListaAluno();
-
-        DefaultTableModel modelo = new javax.swing.table.DefaultTableModel();
-        modelo.addColumn("Codigo");
-        modelo.addColumn("Nome");
-        modelo.addColumn("Turma");
-        modelo.addColumn("Cod.Disciplina");
-        
-        if (listaAluno.size() == 0) {
-            modelo.addRow(new String[]{"Sem dados",
-                        null,
-                        null
-                        ,null
-                        ,null});
-        }
-        
-        for (int i = 0; i < listaAluno.size(); i++) {
-            Aluno a = listaAluno.get(i);
-                    
-            modelo.addRow(new String[]{a.getCodigo()+"",a.getNome(),a.getTurma(),""+a.getCodigo_disciplina()});
-        }
-
-        tabelaAluno.setModel(modelo);
+    /*public void carregarTabelaAluno() throws AlunolistaVaziaException, SQLException{
+    // Fachada fachada = Fachada.getInstancia();
+    ArrayList<Aluno> listaAluno = new ArrayList<Aluno>();
+    listaAluno = fachada.ListaAluno();
+    
+    DefaultTableModel modelo = new javax.swing.table.DefaultTableModel();
+    modelo.addColumn("Codigo");
+    modelo.addColumn("Nome");
+    modelo.addColumn("Turma");
+    modelo.addColumn("Cod.Disciplina");
+    
+    if (listaAluno.size() == 0) {
+    modelo.addRow(new String[]{"Sem dados",
+    null,
+    null
+    ,null
+    ,null});
     }
+    
+    for (int i = 0; i < listaAluno.size(); i++) {
+    Aluno a = listaAluno.get(i);
+    
+    modelo.addRow(new String[]{a.getCodigo()+"",a.getNome(),a.getTurma(),""+a.getCodigo_disciplina()});
+    }
+    
+    tabelaAluno.setModel(modelo);
+    }*/
     
         
     public Disciplina BuscaDisciplina() throws DisciplinaListaVaziaException, SQLException{
@@ -675,12 +567,12 @@ public class Compiler extends javax.swing.JFrame {
             fachada.BuscarDisciplina(d.getCodigo());
             return d;
     }
-    public Aluno AlunoSelecionado() throws AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, SQLException, AlunoNaoEncontradoException, CodigoInvalidoException{
-        int linha =tabelaAluno.getSelectedRow();
-        Aluno al=fachada.ListaAluno().get(linha);
-        fachada.BuscarAluno(al.getCodigo());
-        return al;
-    }
+    /*public Aluno AlunoSelecionado() throws AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, SQLException, AlunoNaoEncontradoException, CodigoInvalidoException{
+    int linha =tabelaAluno.getSelectedRow();
+    Aluno al=fachada.ListaAluno().get(linha);
+    fachada.BuscarAluno(al.getCodigo());
+    return al;
+    }*/
     public void Ajuda(){
         String caminho="";
         File file = new File(caminho);
@@ -694,12 +586,10 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JTextPane CampoResultado;
     private javax.swing.JButton acessoFiltros;
     private javax.swing.JButton adcionarDisciplina;
-    private javax.swing.JButton adicionarAluno;
     private javax.swing.JButton compilaArquivos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -714,10 +604,8 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton sairBotao;
-    private javax.swing.JTable tabelaAluno;
     private javax.swing.JTable tabelaDisciplina;
     // End of variables declaration//GEN-END:variables
 }

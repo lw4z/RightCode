@@ -2,14 +2,14 @@ package br.fafica.pi1.rightcode.disciplina;
 
 import java.util.ArrayList;
 
-import br.fafica.pi1.rightcode.aluno.Aluno;
+//import br.fafica.pi1.rightcode.aluno.Aluno;
 
 public class Disciplina {
 	private int codigo;
 	private String nome;
 	private String descricao;
 	private int codigo_usuario;
-	private ArrayList <Aluno> alunos;
+	//private ArrayList <Aluno> alunos;
 	
 	
 	public Disciplina(String nome,String descricao, int codigo_usuario){
@@ -17,7 +17,7 @@ public class Disciplina {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.codigo_usuario = codigo_usuario;
-		this.alunos = null;
+		//this.alunos = null;
 		
 	}
 	
@@ -26,7 +26,7 @@ public class Disciplina {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.codigo_usuario = codigo_usuario;
-		this.alunos = null;
+		//this.alunos = null;
 		
 	}
 	
@@ -54,18 +54,18 @@ public class Disciplina {
 		this.nome = nome;
 	}
 	
-	public ArrayList<Aluno> getAlunos(){
-		return alunos;
-	}
+	//public ArrayList<Aluno> getAlunos(){
+	//	return alunos;
+	//}
 	
-	public void setAlunos(ArrayList<Aluno> alunos) {
-		this.alunos = alunos;
-	}
+	//public void setAlunos(ArrayList<Aluno> alunos) {
+	//	this.alunos = alunos;
+	//}
 	
-	public void setAluno(Aluno aluno){
-		if(alunos==null) alunos = new ArrayList<Aluno>();
-		this.alunos.add(aluno);
-	}
+	//public void setAluno(Aluno aluno){
+	//	if(alunos==null) alunos = new ArrayList<Aluno>();
+	//	this.alunos.add(aluno);
+	//}
 
 	public int getCodigo_usuario() {
 		return codigo_usuario;

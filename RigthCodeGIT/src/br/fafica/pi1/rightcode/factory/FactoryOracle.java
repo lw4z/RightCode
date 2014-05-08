@@ -1,7 +1,7 @@
 package br.fafica.pi1.rightcode.factory;
 
-import br.fafica.pi1.rightcode.aluno.IRepositorioAluno;
-import br.fafica.pi1.rightcode.aluno.RepositorioAlunoOracle;
+//import br.fafica.pi1.rightcode.aluno.IRepositorioAluno;
+//import br.fafica.pi1.rightcode.aluno.RepositorioAlunoOracle;
 import br.fafica.pi1.rightcode.disciplina.IRepositorioDisciplina;
 import br.fafica.pi1.rightcode.disciplina.RepositorioDisciplinaOracle;
 import br.fafica.pi1.rightcode.filtro.IRepositorioFiltro;
@@ -14,7 +14,7 @@ public class FactoryOracle implements IFactory {
 	private ConnectionFactoryOracle conexao;
 	private IRepositorioUsuario repositorioUsuario;
 	private IRepositorioDisciplina repositorioDisciplina;
-	private IRepositorioAluno repositorioAluno;
+	//private IRepositorioAluno repositorioAluno;
 	private IRepositorioFiltro repositorioFiltro;
 	
 	public FactoryOracle(){
@@ -35,12 +35,12 @@ public class FactoryOracle implements IFactory {
 		return this.repositorioDisciplina;
 	}
 
-	@Override
-	public IRepositorioAluno getRepositorioAluno() {
-		if(this.repositorioAluno == null)
-			this.repositorioAluno=new RepositorioAlunoOracle(conexao);
-		return this.repositorioAluno;
-	}
+        /*@Override
+        public IRepositorioAluno getRepositorioAluno() {
+        if(this.repositorioAluno == null)
+        this.repositorioAluno=new RepositorioAlunoOracle(conexao);
+        return this.repositorioAluno;
+        }*/
 
 	@Override
 	public IRepositorioFiltro getRepositorioFiltro() {

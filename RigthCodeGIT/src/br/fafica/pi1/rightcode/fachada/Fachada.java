@@ -3,8 +3,8 @@ package br.fafica.pi1.rightcode.fachada;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import br.fafica.pi1.rightcode.aluno.Aluno;
-import br.fafica.pi1.rightcode.aluno.ControladorAluno;
+//import br.fafica.pi1.rightcode.aluno.Aluno;
+//import br.fafica.pi1.rightcode.aluno.ControladorAluno;
 import br.fafica.pi1.rightcode.disciplina.ControladorDisciplina;
 import br.fafica.pi1.rightcode.disciplina.Disciplina;
 import br.fafica.pi1.rightcode.exception.AlunoNaoEncontradoException;
@@ -32,13 +32,13 @@ public class Fachada{
 	private ControladorFiltro controleFiltro;
 	private ControladorUsuario controleUsuario;
 	private ControladorDisciplina controleDisciplina;
-	private ControladorAluno controleAluno;
+	//private ControladorAluno controleAluno;
 	
 	private Fachada(){
 		controleUsuario = new ControladorUsuario();
 		controleDisciplina = new ControladorDisciplina();
 		controleFiltro = new ControladorFiltro();
-		controleAluno = new ControladorAluno();
+		//controleAluno = new ControladorAluno();
 	}
 	
 	public static Fachada getInstancia(){
@@ -50,14 +50,14 @@ public class Fachada{
 		this.controleUsuario.TesteUsuario();
 		this.controleFiltro.TesteFiltro();
 		this.controleDisciplina.TesteDisciplina();
-		this.controleAluno.TesteAluno();
+		//this.controleAluno.TesteAluno();
 	}
 	
 	public void selectDataSource(DataSourceType type) {
 		controleUsuario.selectDataSourceUsuario(type);
 		controleDisciplina.selectDataSourceDisciplina(type);
 		controleFiltro.selectDataSourceFiltro(type);
-		controleAluno.selectDataSourceAluno(type);
+		//controleAluno.selectDataSourceAluno(type);
 		
 	}
 	
@@ -65,11 +65,11 @@ public class Fachada{
 		this.controleUsuario.InstalarUsuario();
 		this.controleDisciplina.InstalarDisciplina();
 		this.controleFiltro.InstalarFiltro();
-		this.controleAluno.InstalarAluno();
+		//this.controleAluno.InstalarAluno();
 	}
 
-	public void InstalarAluno() throws SQLException {
-		this.controleAluno.InstalarAluno();
+	/*public void InstalarAluno() throws SQLException {
+		//this.controleAluno.InstalarAluno();
 	}
 
 	public void AdicionarAluno(Aluno aluno) throws SQLException, CodigoInvalidoException, NomeInvalidoException, AlunoTurmaInvalidaException {
@@ -92,7 +92,7 @@ public class Fachada{
 	public void EditarAluno(Aluno aluno) throws AlunoNaoEncontradoException, SQLException, CodigoInvalidoException {
 		this.controleAluno.RemoverAluno(aluno);
 	}
-
+*/
 	public void InstalarFiltro() throws SQLException {
 		this.controleFiltro.InstalarFiltro();
 		

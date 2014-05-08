@@ -251,11 +251,11 @@ public class RightCode extends javax.swing.JFrame {
                 } catch (DisciplinaListaVaziaException ex) {
                    
                 }
-                try {
-                    compiler.carregarTabelaAluno();
+                /*try {
+                compiler.carregarTabelaAluno();
                 } catch (AlunolistaVaziaException ex) {
-                   
-                }
+                
+                }*/
                     
             }
             this.setEnabled(true);

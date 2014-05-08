@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import br.fafica.pi1.rightcode.aluno.Aluno;
+//import br.fafica.pi1.rightcode.aluno.Aluno;
 import br.fafica.pi1.rightcode.compilador.Compilador;
 import br.fafica.pi1.rightcode.disciplina.Disciplina;
 import br.fafica.pi1.rightcode.exception.AlunoNaoEncontradoException;
@@ -52,18 +52,18 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 		private Filtro filtro4;
 		
 		//Declaração de Alunos
-		private Aluno aluno1;
-		private Aluno aluno2;
-		private Aluno aluno3;
-		private Aluno aluno4;
-		private Aluno aluno5;
-		private Aluno aluno6;
-		private Aluno aluno7;
-		private Aluno aluno8;
-		private Aluno aluno9;
-		private Aluno aluno10;
-		private Aluno aluno11;
-    private Aluno aluno;
+                /*private Aluno aluno1;
+                private Aluno aluno2;
+                private Aluno aluno3;
+                private Aluno aluno4;
+                private Aluno aluno5;
+                private Aluno aluno6;
+                private Aluno aluno7;
+                private Aluno aluno8;
+                private Aluno aluno9;
+                private Aluno aluno10;
+                private Aluno aluno11;
+                private Aluno aluno;*/
 		
 		
 		public Aplicacao(){
@@ -141,33 +141,33 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 			
 			
 			//Adicionar Objetos Aluno no seu Repositorio(Futuramente passando por controladores)
-			this.aluno1 = new Aluno("Jorge","1º período",disciplina01.getCodigo());
-			this.aluno2 = new Aluno("Maria","1º período",disciplina01.getCodigo());
-			this.aluno3 = new Aluno("Sebastião","2º período",disciplina02.getCodigo());
-			this.aluno4 = new Aluno("Manoel","2º período",disciplina02.getCodigo());
-			this.aluno5 = new Aluno("Carlos","4º Perído",disciplina04.getCodigo());
-			this.aluno6 = new Aluno("Jorge","6º Perído",disciplina05.getCodigo());
-			this.aluno7 = new Aluno("Regina","4º Perído",disciplina04.getCodigo());
-			this.aluno8 = new Aluno("Jackson","3º Perído",disciplina03.getCodigo());
-			this.aluno9 = new Aluno("Ivan","3º Perído",disciplina03.getCodigo());
-			this.aluno10 = new Aluno("Eduardo","3º Perído",disciplina03.getCodigo());
-			this.aluno11 = new Aluno("Guilherme","2º Perído",disciplina02.getCodigo());
-			fachada.AdicionarAluno(aluno1);
-			fachada.AdicionarAluno(aluno2);
-			fachada.AdicionarAluno(aluno3);
-			fachada.AdicionarAluno(aluno4);
-			fachada.AdicionarAluno(aluno5);
-			fachada.AdicionarAluno(aluno6);
-			fachada.AdicionarAluno(aluno7);
-			fachada.AdicionarAluno(aluno8);
-			fachada.AdicionarAluno(aluno9);
-			fachada.AdicionarAluno(aluno10);
-			fachada.AdicionarAluno(aluno11);
+                        /*this.aluno1 = new Aluno("Jorge","1º período",disciplina01.getCodigo());
+                        this.aluno2 = new Aluno("Maria","1º período",disciplina01.getCodigo());
+                        this.aluno3 = new Aluno("Sebastião","2º período",disciplina02.getCodigo());
+                        this.aluno4 = new Aluno("Manoel","2º período",disciplina02.getCodigo());
+                        this.aluno5 = new Aluno("Carlos","4º Perído",disciplina04.getCodigo());
+                        this.aluno6 = new Aluno("Jorge","6º Perído",disciplina05.getCodigo());
+                        this.aluno7 = new Aluno("Regina","4º Perído",disciplina04.getCodigo());
+                        this.aluno8 = new Aluno("Jackson","3º Perído",disciplina03.getCodigo());
+                        this.aluno9 = new Aluno("Ivan","3º Perído",disciplina03.getCodigo());
+                        this.aluno10 = new Aluno("Eduardo","3º Perído",disciplina03.getCodigo());
+                        this.aluno11 = new Aluno("Guilherme","2º Perído",disciplina02.getCodigo());
+                        fachada.AdicionarAluno(aluno1);
+                        fachada.AdicionarAluno(aluno2);
+                        fachada.AdicionarAluno(aluno3);
+                        fachada.AdicionarAluno(aluno4);
+                        fachada.AdicionarAluno(aluno5);
+                        fachada.AdicionarAluno(aluno6);
+                        fachada.AdicionarAluno(aluno7);
+                        fachada.AdicionarAluno(aluno8);
+                        fachada.AdicionarAluno(aluno9);
+                        fachada.AdicionarAluno(aluno10);
+                        fachada.AdicionarAluno(aluno11);*/
 			
 			
 			//Remo��o dos Objetos dos Repositorios
-			Aluno a1 = fachada.BuscarAluno(5);
-			fachada.RemoverAluno(a1);
+			//Aluno a1 = fachada.BuscarAluno(5);
+			//fachada.RemoverAluno(a1);
 			Disciplina d1 = fachada.BuscarDisciplina(2);
 			fachada.RemoverDisciplina(d1);
 			Filtro f1 = fachada.BuscarFiltro(2);
@@ -200,9 +200,9 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 				System.out.println(f+"\n");
 			}
 			
-			for(Aluno a:fachada.ListaAluno()){
-				System.out.println(a+"\n");
-			}
+                        /*for(Aluno a:fachada.ListaAluno()){
+                        System.out.println(a+"\n");
+                        }*/
 			
 			
 			
@@ -214,7 +214,7 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 			this.filtro2 = new Filtro("Get","get",0);
 			filtros.add(filtro1);
 			filtros.add(filtro2);
-			Compilador compiler = new Compilador(filtros,aluno);
+			Compilador compiler = new Compilador(filtros);
 			try {
 				compiler.Compilar("ProjectSingleton");
 				//compiler.Compilar("ArquivosTeste");

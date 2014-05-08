@@ -1,0 +1,50 @@
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/teste2.java
+Compilação: Arquivo Não compilado
+
+/home/lw4z/teste/teste2.java:5: error: ';' expected
+		System.out.println("")
+		                      ^
+1 error
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/teste10.java
+Compilação: Arquivo Compilador com Sucesso
+
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/TesteArquivo02.java
+Compilação: Arquivo Compilador com Sucesso
+
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/TesteArquivo03.java
+Compilação: Arquivo Compilador com Sucesso
+
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/TesteArquivo01.java
+Compilação: Arquivo Não compilado
+
+/home/lw4z/teste/TesteArquivo01.java:15: error: class teta is public, should be declared in a file named teta.java
+public class teta {
+       ^
+1 error
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/teste3.java
+Compilação: Arquivo Compilador com Sucesso
+
+
+####################################################
+Data: Thu May 08 11:37:11 BRT 2014
+Caminho do Arquivo: /home/lw4z/teste/teste.java
+Compilação: Arquivo Compilador com Sucesso
+

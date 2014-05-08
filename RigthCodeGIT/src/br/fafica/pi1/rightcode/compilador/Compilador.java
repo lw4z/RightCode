@@ -1,6 +1,6 @@
 package br.fafica.pi1.rightcode.compilador;
 
-import br.fafica.pi1.rightcode.aluno.Aluno;
+//import br.fafica.pi1.rightcode.aluno.Aluno;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,15 +16,15 @@ public class Compilador {
 	private ArrayList <Filtro> filtros = null;
 	private CompilerFerramentas compiler;
 	private File file;
-        private Aluno aluno;
+       // private Aluno aluno;
 	
-	public Compilador(ArrayList <Filtro> filtros,Aluno aluno){
+	public Compilador(ArrayList <Filtro> filtros){
 		if(filtros == null){
-			 compiler = new CompilerFerramentas(filtros,aluno);
+			 compiler = new CompilerFerramentas(filtros);
 		}else{
-                    this.aluno=aluno;
+                  //  this.aluno=aluno;
                     this.filtros = filtros;
-                    compiler = new CompilerFerramentas(filtros,aluno);
+                    compiler = new CompilerFerramentas(filtros);
 		}
 	}
 	
