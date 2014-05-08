@@ -54,6 +54,7 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         campoDescricao = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nova Disciplina");
@@ -62,12 +63,14 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         campoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoNomeActionPerformed(evt);
             }
         });
+        getContentPane().add(campoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 36, 300, -1));
 
         Concluir.setText("Concluir");
         Concluir.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +78,11 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
                 ConcluirActionPerformed(evt);
             }
         });
+        getContentPane().add(Concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 207, 95, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descrição");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 62, -1, -1));
 
         salvarD.setText("Salvar");
         salvarD.addActionListener(new java.awt.event.ActionListener() {
@@ -84,47 +90,20 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
                 salvarDActionPerformed(evt);
             }
         });
+        getContentPane().add(salvarD, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 207, 90, -1));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome da Disciplina");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 11, -1, -1));
 
         campoDescricao.setColumns(20);
         campoDescricao.setRows(5);
         jScrollPane1.setViewportView(campoDescricao);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(salvarD, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                        .addComponent(Concluir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(campoNome)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(salvarD)
-                    .addComponent(Concluir))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 88, 300, 101));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,6 +193,7 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
     private javax.swing.JTextArea campoDescricao;
     private javax.swing.JTextField campoNome;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton salvarD;

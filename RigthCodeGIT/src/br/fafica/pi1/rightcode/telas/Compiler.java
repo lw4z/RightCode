@@ -37,6 +37,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -67,7 +68,7 @@ public class Compiler extends javax.swing.JFrame {
     public Compiler() {
         initComponents();
         this.setLocationRelativeTo(null);
-//        this.aluno=aluno;
+       // this.aluno=aluno;
         fachada = Fachada.getInstancia();
         arrayFiltro = new ArrayList<>();
        
@@ -101,18 +102,25 @@ public class Compiler extends javax.swing.JFrame {
         jMenuBar4 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        CampoResultado = new javax.swing.JTextPane();
-        compilaArquivos = new javax.swing.JButton();
-        sairBotao = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         acessoFiltros = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabelaDisciplina = new javax.swing.JTable();
         adcionarDisciplina = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        CampoResultado = new javax.swing.JTextPane();
+        compilaArquivos = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        ComboD = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        exportar = new javax.swing.JLabel();
+        adcionarDis = new javax.swing.JLabel();
+        logorightode = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -135,79 +143,31 @@ public class Compiler extends javax.swing.JFrame {
         jMenu6.setText("Edit");
         jMenuBar4.add(jMenu6);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Compilador");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("RightCode - Compilador");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CampoResultado.setEditable(false);
-        jScrollPane1.setViewportView(CampoResultado);
-
-        compilaArquivos.setText("Compilar Arquivos");
-        compilaArquivos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                compilaArquivosActionPerformed(evt);
-            }
-        });
-
-        sairBotao.setText("Sair");
-        sairBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sairBotaoActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Exportar Resultado");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(compilaArquivos)
-                        .addGap(179, 179, 179)
-                        .addComponent(jButton1))
-                    .addComponent(sairBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {compilaArquivos, sairBotao});
-
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(compilaArquivos)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(sairBotao)
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Resultado");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 68, -1, 20));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Selecione a Disciplina");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, -1, -1));
 
-        acessoFiltros.setText("Filtros");
+        acessoFiltros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/filtros03.png"))); // NOI18N
         acessoFiltros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acessoFiltrosActionPerformed(evt);
             }
         });
+        getContentPane().add(acessoFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 80, 70));
 
         jScrollPane3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -240,12 +200,75 @@ public class Compiler extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tabelaDisciplina);
 
-        adcionarDisciplina.setText("Adicionar Disciplina");
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 110, 250, 440));
+
+        adcionarDisciplina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Sign_Add_Icon_32.png"))); // NOI18N
+        adcionarDisciplina.setBorder(null);
+        adcionarDisciplina.setBorderPainted(false);
         adcionarDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adcionarDisciplinaActionPerformed(evt);
             }
         });
+        getContentPane().add(adcionarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 30, 30));
+
+        CampoResultado.setEditable(false);
+        jScrollPane1.setViewportView(CampoResultado);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 103, 783, 450));
+
+        compilaArquivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Fileexplorer-green-64.png"))); // NOI18N
+        compilaArquivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compilaArquivosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(compilaArquivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 580, 80, 70));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/abrir2.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 580, 80, 70));
+
+        ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Programação I", "Algoritmo ", "POO" }));
+        ComboD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboDActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ComboD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, -1));
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Disciplinas:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Verificar");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 560, -1, -1));
+
+        exportar.setForeground(new java.awt.Color(255, 255, 255));
+        exportar.setText("Exportar");
+        getContentPane().add(exportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, -1, -1));
+
+        adcionarDis.setForeground(new java.awt.Color(255, 255, 255));
+        adcionarDis.setText("Adicionar");
+        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, -1));
+
+        logorightode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/rcodelogo.png"))); // NOI18N
+        getContentPane().add(logorightode, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, 90));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 1270, 670));
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Filtros");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 560, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 670));
 
         jMenu7.setText("Menu");
 
@@ -261,97 +284,8 @@ public class Compiler extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar5);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(adcionarDisciplina))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel2)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 564, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(137, 137, 137)
-                        .addComponent(acessoFiltros)
-                        .addGap(35, 35, 35))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(acessoFiltros)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(adcionarDisciplina)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void sairBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairBotaoActionPerformed
-        //telaAnt.setEnabled(true);
-        //this.setVisible(false);
-        System.exit(0);
-    }//GEN-LAST:event_sairBotaoActionPerformed
-
-    private void compilaArquivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compilaArquivosActionPerformed
-    
-        try {
-          
-            Compilador compilador = new Compilador(arrayFiltro);
-            UtilArquivo dell = new UtilArquivo();
-            dell.deletarCriarArquvo();
-            compilador.Compilar(Caminho());
-            CampoResultado.setText(ArquivoResultado());
-        
-        } /*catch (AlunolistaVaziaException ex) {
-        JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(this, ex.getMessage());
-        }*/ catch (CaminhoNaoEncontraException ex) {
-        	JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (JavaException ex) {
-        	JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (IOException ex) {
-        	JOptionPane.showMessageDialog(this, ex.getMessage());
-        } /*catch (AlunoNaoEncontradoException ex) {
-        JOptionPane.showMessageDialog(this, ex.getMessage());
-        } catch (CodigoInvalidoException ex) {
-        JOptionPane.showMessageDialog(this, ex.getMessage());
-        }*/catch (ArrayIndexOutOfBoundsException ex){
-                    this.setEnabled(true);
-                    JOptionPane.showMessageDialog(null,"Nenhum Aluno foi selecionada!");
-                    
-                }
-
-    }//GEN-LAST:event_compilaArquivosActionPerformed
 
     private void acessoFiltrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessoFiltrosActionPerformed
         try {
@@ -390,6 +324,11 @@ public class Compiler extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_formWindowClosing
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        this.setVisible(false);
+         new RightCode().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             File arquivo;
@@ -397,21 +336,53 @@ public class Compiler extends javax.swing.JFrame {
             int Result=arq.showSaveDialog(this);
             if(Result==JFileChooser.APPROVE_OPTION)
             {
-            arquivo = arq.getSelectedFile(); //Classe para Arquivos
+                arquivo = arq.getSelectedFile(); //Classe para Arquivos
                 try (FileWriter inArq = new FileWriter(arquivo.getPath())) {
                     inArq.write(CampoResultado.getText());
                 }
             }
-         }catch(IOException ex){
+        }catch(IOException ex){
             JOptionPane.showMessageDialog(this,"Erro ao abrir o arquivo");
-         }
- 
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        this.setVisible(false);
-         new RightCode().setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void compilaArquivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compilaArquivosActionPerformed
+
+        try {
+
+            Compilador compilador = new Compilador(arrayFiltro);
+            UtilArquivo dell = new UtilArquivo();
+            dell.deletarCriarArquvo();
+            compilador.Compilar(Caminho());
+            CampoResultado.setText(ArquivoResultado());
+
+        }/* catch (AlunolistaVaziaException ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage());
+        } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, ex.getMessage());
+        } */catch (CaminhoNaoEncontraException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } catch (JavaException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } /*catch (AlunoNaoEncontradoException ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage());
+        } catch (CodigoInvalidoException ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage());
+        }*/catch (ArrayIndexOutOfBoundsException ex){
+            this.setEnabled(true);
+            JOptionPane.showMessageDialog(null,"Nenhum Aluno foi selecionada!");
+
+        }
+        
+    }//GEN-LAST:event_compilaArquivosActionPerformed
+
+    private void ComboDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDActionPerformed
+
+    }//GEN-LAST:event_ComboDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -489,6 +460,26 @@ public class Compiler extends javax.swing.JFrame {
         return this.usuario;
         
     }
+    //metodo carregar lista drop down
+     public void carregarLista() throws DisciplinaListaVaziaException, SQLException{
+        //Fachada fachada = Fachada.getInstancia();
+        ArrayList<Disciplina> listaDisciplina;
+        listaDisciplina = fachada.ListaDisciplina();
+
+         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+      
+        for (int i = 0; i < listaDisciplina.size(); i++) {
+            Disciplina d = listaDisciplina.get(i);
+           modelo.addElement(d.getNome());
+            
+         
+        }
+
+        ComboD.setModel(modelo);
+
+    
+
+    }
     //metodo carregar tebela disciplinas
     public void carregarDisciplinas() throws DisciplinaListaVaziaException, SQLException{
         //Fachada fachada = Fachada.getInstancia();
@@ -519,7 +510,7 @@ public class Compiler extends javax.swing.JFrame {
     
 
     }
-    /*public void carregarTabelaAluno() throws AlunolistaVaziaException, SQLException{
+    /* public void carregarTabelaAluno() throws AlunolistaVaziaException, SQLException{
     // Fachada fachada = Fachada.getInstancia();
     ArrayList<Aluno> listaAluno = new ArrayList<Aluno>();
     listaAluno = fachada.ListaAluno();
@@ -584,12 +575,20 @@ public class Compiler extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextPane CampoResultado;
+    private javax.swing.JComboBox ComboD;
     private javax.swing.JButton acessoFiltros;
+    private javax.swing.JLabel adcionarDis;
     private javax.swing.JButton adcionarDisciplina;
     private javax.swing.JButton compilaArquivos;
+    private javax.swing.JLabel exportar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -602,10 +601,9 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar4;
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton sairBotao;
+    private javax.swing.JLabel logorightode;
     private javax.swing.JTable tabelaDisciplina;
     // End of variables declaration//GEN-END:variables
 }

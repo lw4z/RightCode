@@ -64,6 +64,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         Concluir = new javax.swing.JButton();
         remover = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -78,8 +79,11 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Selecionar Filtros");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 36, -1, -1));
 
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,12 +123,15 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelaFiltro);
         tabelaFiltro.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 61, 392, 287));
+
         NovoF.setText("Novo");
         NovoF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NovoFActionPerformed(evt);
             }
         });
+        getContentPane().add(NovoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 366, 110, -1));
 
         Concluir.setText("Concluir");
         Concluir.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +139,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 ConcluirActionPerformed(evt);
             }
         });
+        getContentPane().add(Concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 366, 110, -1));
 
         remover.setText("Remover");
         remover.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +147,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 removerActionPerformed(evt);
             }
         });
+        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 366, 110, -1));
 
         jButton1.setText("Utilizar Filtros");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -146,48 +155,10 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 32, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(NovoF, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(remover)
-                        .addGap(25, 25, 25)
-                        .addComponent(Concluir))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Concluir, NovoF, remover});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NovoF)
-                    .addComponent(Concluir)
-                    .addComponent(remover))
-                .addGap(34, 34, 34))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Concluir, NovoF, remover});
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -325,6 +296,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton remover;
     private javax.swing.JTable tabelaFiltro;

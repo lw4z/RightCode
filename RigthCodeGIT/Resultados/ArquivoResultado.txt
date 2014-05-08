@@ -1,6 +1,6 @@
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:31 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/teste2.java
 Compilação: Arquivo Não compilado
 
@@ -10,25 +10,25 @@ Compilação: Arquivo Não compilado
 1 error
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:31 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/teste10.java
 Compilação: Arquivo Compilador com Sucesso
 
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:31 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/TesteArquivo02.java
 Compilação: Arquivo Compilador com Sucesso
 
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:31 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/TesteArquivo03.java
 Compilação: Arquivo Compilador com Sucesso
 
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:31 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/TesteArquivo01.java
 Compilação: Arquivo Não compilado
 
@@ -38,13 +38,13 @@ public class teta {
 1 error
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:31 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/teste3.java
 Compilação: Arquivo Compilador com Sucesso
 
 
 ####################################################
-Data: Thu May 08 11:37:11 BRT 2014
+Data: Thu May 08 13:41:32 BRT 2014
 Caminho do Arquivo: /home/lw4z/teste/teste.java
 Compilação: Arquivo Compilador com Sucesso
 

@@ -35,15 +35,17 @@ public class SplashRc extends JWindow {
     public SplashRc(){
        
         absoluto = new AbsoluteLayout();
-        absbarra = new  AbsoluteConstraints(10,20);
+        absbarra = new  AbsoluteConstraints(120,158);
         absimage = new  AbsoluteConstraints(0,0);
         
         jlabel   = new JLabel();
         image = new ImageIcon(this.getClass().getResource("rcode.png"));
         jlabel.setIcon(image);
         barra= new JProgressBar();
-        barra.setPreferredSize(new Dimension(350,10));
+        barra.setPreferredSize(new Dimension(210,12));
         barra.setForeground(Color.GREEN);
+        barra.setBackground(Color.gray);
+        
         this.getContentPane().setLayout(absoluto);
         this.getContentPane().add(jlabel,absimage);
         this.getContentPane().add(barra,absbarra);
@@ -57,7 +59,7 @@ public class SplashRc extends JWindow {
                   barra.setValue(i);
                   i++;
                   try {
-                      sleep(25);
+                      sleep(35);
                   } catch (InterruptedException ex) {
                       Logger.getLogger(SplashRc.class.getName()).log(Level.SEVERE, null, ex);
                       

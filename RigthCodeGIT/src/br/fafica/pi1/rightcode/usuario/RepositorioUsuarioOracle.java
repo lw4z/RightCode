@@ -87,6 +87,7 @@ public class RepositorioUsuarioOracle implements IRepositorioUsuario {
 	public void InstalarUsuario() throws SQLException {
 		Connection con = null;
 		try {
+                   
 		    String sql1 = "create table if not exists usuario" +
 	                   "(codigo_usuario int(5) primary key ," +
 	                   "nome_usuario varchar(100) not null)";
