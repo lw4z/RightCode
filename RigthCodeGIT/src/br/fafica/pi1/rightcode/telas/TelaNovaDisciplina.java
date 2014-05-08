@@ -116,7 +116,7 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
         this.telaAnt.setEnabled(true);
         this.setVisible(false);
         try {
-            this.telaAnt.carregarDisciplinas();
+            this.telaAnt.carregarListaCombo();
         } catch (DisciplinaListaVaziaException ex) {
            
         } catch (SQLException ex) {

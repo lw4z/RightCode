@@ -1,14 +1,11 @@
 package br.fafica.pi1.rightcode.telas;
 
-
-
-
 //import br.fafica.pi1.rightcode.aluno.Aluno;
 import br.fafica.pi1.rightcode.compilador.Compilador;
 import br.fafica.pi1.rightcode.compilador.Resultado;
 import br.fafica.pi1.rightcode.disciplina.Disciplina;
-import br.fafica.pi1.rightcode.exception.AlunoNaoEncontradoException;
-import br.fafica.pi1.rightcode.exception.AlunolistaVaziaException;
+//import br.fafica.pi1.rightcode.exception.AlunoNaoEncontradoException;
+//import br.fafica.pi1.rightcode.exception.AlunolistaVaziaException;
 import br.fafica.pi1.rightcode.exception.CaminhoNaoEncontraException;
 import br.fafica.pi1.rightcode.exception.CodigoInvalidoException;
 import br.fafica.pi1.rightcode.exception.DisciplinaListaVaziaException;
@@ -170,12 +167,6 @@ public class Compiler extends javax.swing.JFrame {
         });
         getContentPane().add(acessoFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 80, 70));
 
-        jScrollPane3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane3MouseClicked(evt);
-            }
-        });
-
         tabelaDisciplina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -234,7 +225,6 @@ public class Compiler extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 580, 80, 70));
 
-        ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Programação I", "Algoritmo ", "POO" }));
         ComboD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDActionPerformed(evt);
@@ -311,17 +301,6 @@ public class Compiler extends javax.swing.JFrame {
          this.setEnabled(false);
          new TelaNovaDisciplina(this,this.usuario).setVisible(true);
     }//GEN-LAST:event_adcionarDisciplinaActionPerformed
-
-    private void jScrollPane3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane3MouseClicked
-        try {
-            carregarDisciplinas();
-        } catch (DisciplinaListaVaziaException ex) {
-            JOptionPane.showMessageDialog(this,ex.getMessage());
-        } catch (SQLException ex) {
-        	ex.printStackTrace();
-			JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }//GEN-LAST:event_jScrollPane3MouseClicked
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
          this.telaAnt.setEnabled(true);
@@ -465,27 +444,23 @@ public class Compiler extends javax.swing.JFrame {
         
     }
     //metodo carregar lista drop down
-     public void carregarLista() throws DisciplinaListaVaziaException, SQLException{
-        //Fachada fachada = Fachada.getInstancia();
+     public void carregarListaCombo() throws DisciplinaListaVaziaException, SQLException{
         ArrayList<Disciplina> listaDisciplina;
         listaDisciplina = fachada.ListaDisciplina();
 
-         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-      
+        ComboD.removeAllItems();
         for (int i = 0; i < listaDisciplina.size(); i++) {
             Disciplina d = listaDisciplina.get(i);
-           modelo.addElement(d.getNome());
+         ComboD.addItem(d.getNome( ));
             
          
         }
 
-        ComboD.setModel(modelo);
-
-    
-
+       
     }
     //metodo carregar tebela disciplinas
-    public void carregarDisciplinas() throws DisciplinaListaVaziaException, SQLException{
+     
+  /*public void carregarDisciplinas() throws DisciplinaListaVaziaException, SQLException{
         //Fachada fachada = Fachada.getInstancia();
         ArrayList<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
         listaDisciplina = fachada.ListaDisciplina();
@@ -514,6 +489,8 @@ public class Compiler extends javax.swing.JFrame {
     
 
     }
+     */
+   
     /* public void carregarTabelaAluno() throws AlunolistaVaziaException, SQLException{
     // Fachada fachada = Fachada.getInstancia();
     ArrayList<Aluno> listaAluno = new ArrayList<Aluno>();
@@ -544,7 +521,7 @@ public class Compiler extends javax.swing.JFrame {
     
         
     public Disciplina BuscaDisciplina() throws DisciplinaListaVaziaException, SQLException{
-       // Fachada fachada = Fachada.getInstancia();
+       
         ArrayList<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
         listaDisciplina = fachada.ListaDisciplina();
          
@@ -555,13 +532,15 @@ public class Compiler extends javax.swing.JFrame {
         return disciplinaBusca;
     }
     
-    public Disciplina DisciplinaSelecionada() throws DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, SQLException, DisciplinaNaoEncontradaException, CodigoInvalidoException{
-        int linha = tabelaDisciplina.getSelectedRow();
-
-            Disciplina d = fachada.ListaDisciplina().get(linha);
+   /* public Disciplina DisciplinaSelecionada() throws DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, SQLException, DisciplinaNaoEncontradaException, CodigoInvalidoException{
+       Object linha = ComboD.getSelectedItem();
+         //int linha = tabelaDisciplina.getSelectedIndex();
+         Disciplina d = fachada.ListaDisciplina();
+       //Disciplina d = fachada.ListaDisciplina().get(linha);
             fachada.BuscarDisciplina(d.getCodigo());
             return d;
     }
+    /*
     /*public Aluno AlunoSelecionado() throws AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, SQLException, AlunoNaoEncontradoException, CodigoInvalidoException{
     int linha =tabelaAluno.getSelectedRow();
     Aluno al=fachada.ListaAluno().get(linha);

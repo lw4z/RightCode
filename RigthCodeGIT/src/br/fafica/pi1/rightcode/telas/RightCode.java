@@ -202,7 +202,7 @@ public class RightCode extends javax.swing.JFrame {
                     compiler= new Compiler(this,usuarioSelecionado());
                     compiler.setVisible(true);
                 try {
-                    compiler.carregarDisciplinas();
+                    compiler.carregarListaCombo();
                 } catch (DisciplinaListaVaziaException ex) {
                    
                 }
