@@ -57,7 +57,6 @@ public class Compiler extends javax.swing.JFrame {
     private Fachada fachada;
     private Usuario usuario;
     private Disciplina disciplina;
-    //private Aluno aluno;
     private ArrayList <Filtro> arrayFiltro;
     /**
      * Creas new form Compilador
@@ -65,7 +64,7 @@ public class Compiler extends javax.swing.JFrame {
     public Compiler() {
         initComponents();
         this.setLocationRelativeTo(null);
-       // this.aluno=aluno;
+       this.disciplina=disciplina;
         fachada = Fachada.getInstancia();
         arrayFiltro = new ArrayList<>();
        
@@ -296,7 +295,7 @@ public class Compiler extends javax.swing.JFrame {
 
         try {
 
-            Compilador compilador = new Compilador(arrayFiltro);
+            Compilador compilador = new Compilador(arrayFiltro, DisciplinaSelecionada());
             UtilArquivo dell = new UtilArquivo();
             dell.deletarCriarArquvo();
             compilador.Compilar(Caminho());
@@ -321,12 +320,20 @@ public class Compiler extends javax.swing.JFrame {
             this.setEnabled(true);
             JOptionPane.showMessageDialog(null,"Nenhum Aluno foi selecionada!");
 
+        } catch (DisciplinaListaVaziaException ex) {
+            Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DisciplinaNaoEncontradaException ex) {
+            Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CodigoInvalidoException ex) {
+            Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_compilaArquivosActionPerformed
 
     private void ComboDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDActionPerformed
-        
+       
     }//GEN-LAST:event_ComboDActionPerformed
 
     /**

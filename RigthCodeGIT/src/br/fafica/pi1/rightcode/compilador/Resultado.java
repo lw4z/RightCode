@@ -1,6 +1,7 @@
 package br.fafica.pi1.rightcode.compilador;
 
 //import br.fafica.pi1.rightcode.aluno.Aluno;
+import br.fafica.pi1.rightcode.disciplina.Disciplina;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,17 +14,17 @@ public class Resultado {
 	private ArrayList <BuscaFiltro> buscaFiltro;
 	private Date data;
 	private String erro;
-      //  private Aluno aluno;
+        private Disciplina disciplina;
 
    
 	
-	public Resultado(String caminho,boolean compilou,String erro){
+	public Resultado(String caminho,boolean compilou,String erro, Disciplina disciplina){
 		if(compilou){
 			this.compilou = "Arquivo Compilador com Sucesso";
 		}else{
 			this.compilou = "Arquivo Não compilado";
 		}
-		//this.aluno=aluno;
+		this.disciplina=disciplina;
 		this.caminho = caminho;
 		this.buscaFiltro = null;
 		this.data = new Date();
@@ -34,13 +35,13 @@ public class Resultado {
 		return caminho;
 	}
         
-        //public Aluno getAluno() {
-       // return aluno;
-       // }
+        public Disciplina getDisciplina() {
+        return disciplina;
+       }
         
-       // public void setAluno(Aluno aluno) {
-        //this.aluno = aluno;
-    //}
+       public void setAluno(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
 
 	public void setCaminho(String caminho) {
 		this.caminho = caminho;
@@ -89,10 +90,10 @@ public class Resultado {
 	public String toString(){
 		if(buscaFiltro == null){
 			return "####################################################\n"+
-					"Data: "+this.data +"\nCaminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
+					"Data: "+this.data +"\nDisciplina: "+this.disciplina.getNome()+"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
 		}else{
 			return "####################################################\n"+
-					"Data: "+this.data +"\nCaminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
+					"Data: "+this.data +"\nDiscip´lina: "+this.disciplina.getNome()+"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
 					"\n"+arrayString()+""+this.erro;
 		}
 	}

@@ -1,6 +1,7 @@
 package br.fafica.pi1.rightcode.compilador;
 
 //import br.fafica.pi1.rightcode.aluno.Aluno;
+import br.fafica.pi1.rightcode.disciplina.Disciplina;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -29,10 +30,10 @@ public class CompilerFerramentas {
 	private Resultado resultado;
 	private boolean nenhumaClasseCompilada;
 	private Charset utf8 = StandardCharsets.UTF_8;
-    //private Aluno aluno;
+        private Disciplina disciplina;
 	
-	public CompilerFerramentas (ArrayList <Filtro> filtros){
-            //this.aluno=aluno;
+	public CompilerFerramentas (ArrayList <Filtro> filtros, Disciplina disciplina){
+            this.disciplina=disciplina;
             this.filtros = filtros;
             nenhumaClasseCompilada = true;
             repositorioResultado = new RepositorioResultado();
@@ -86,7 +87,7 @@ public class CompilerFerramentas {
 		
 		if(resposta == 0){
 			System.out.println(caminho+"Retornou True e o arquivo foi Compilado");
-			resultado = new Resultado(caminho,true,erro);
+			resultado = new Resultado(caminho,true,erro, disciplina);
 			
 			if(!filtros.isEmpty()){
 				
@@ -117,7 +118,7 @@ public class CompilerFerramentas {
 			return true;
 		}else{
 			//System.out.println(caminho+"Retornou False e o arquivo não foi Compilado");
-			resultado = new Resultado(caminho,false,erro);
+			resultado = new Resultado(caminho,false,erro, disciplina);
 			System.err.println(resultado);
 			repositorioResultado.setArquivoResultado(resultado);
 			file.deleteOnExit();

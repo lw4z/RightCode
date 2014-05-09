@@ -1,50 +1,96 @@
 
 ####################################################
-Data: Thu May 08 13:41:31 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/teste2.java
+Data: Fri May 09 02:14:08 BRT 2014
+Disciplina: Poo2 - 2ºUnidade
+Caminho do Arquivo: C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java
 Compilação: Arquivo Não compilado
 
-/home/lw4z/teste/teste2.java:5: error: ';' expected
-		System.out.println("")
-		                      ^
-1 error
-
-####################################################
-Data: Thu May 08 13:41:31 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/teste10.java
-Compilação: Arquivo Compilador com Sucesso
-
-
-####################################################
-Data: Thu May 08 13:41:31 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/TesteArquivo02.java
-Compilação: Arquivo Compilador com Sucesso
-
-
-####################################################
-Data: Thu May 08 13:41:31 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/TesteArquivo03.java
-Compilação: Arquivo Compilador com Sucesso
-
-
-####################################################
-Data: Thu May 08 13:41:31 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/TesteArquivo01.java
-Compilação: Arquivo Não compilado
-
-/home/lw4z/teste/TesteArquivo01.java:15: error: class teta is public, should be declared in a file named teta.java
-public class teta {
-       ^
-1 error
-
-####################################################
-Data: Thu May 08 13:41:31 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/teste3.java
-Compilação: Arquivo Compilador com Sucesso
-
-
-####################################################
-Data: Thu May 08 13:41:32 BRT 2014
-Caminho do Arquivo: /home/lw4z/teste/teste.java
-Compilação: Arquivo Compilador com Sucesso
-
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:3: error: package aula03.com.fafica.util does not exist
+import aula03.com.fafica.util.RepositorioException;
+                             ^
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:7: error: cannot find symbol
+    private IRepositorioCliente clientes;
+            ^
+  symbol:   class IRepositorioCliente
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:9: error: cannot find symbol
+    public CadastroCliente(IRepositorioCliente repositorio) {
+                           ^
+  symbol:   class IRepositorioCliente
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:13: error: cannot find symbol
+    public void cadastrar(Cliente cliente) throws ClienteJaCadastradoException, RepositorioException {
+                          ^
+  symbol:   class Cliente
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:13: error: cannot find symbol
+    public void cadastrar(Cliente cliente) throws ClienteJaCadastradoException, RepositorioException {
+                                                  ^
+  symbol:   class ClienteJaCadastradoException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:13: error: cannot find symbol
+    public void cadastrar(Cliente cliente) throws ClienteJaCadastradoException, RepositorioException {
+                                                                                ^
+  symbol:   class RepositorioException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:25: error: cannot find symbol
+    public void remover(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
+                                           ^
+  symbol:   class ClienteNaoEncontradoException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:25: error: cannot find symbol
+    public void remover(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
+                                                                          ^
+  symbol:   class RepositorioException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:29: error: cannot find symbol
+    public void atualizar(Cliente cliente) throws ClienteNaoEncontradoException, RepositorioException {
+                          ^
+  symbol:   class Cliente
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:29: error: cannot find symbol
+    public void atualizar(Cliente cliente) throws ClienteNaoEncontradoException, RepositorioException {
+                                                  ^
+  symbol:   class ClienteNaoEncontradoException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:29: error: cannot find symbol
+    public void atualizar(Cliente cliente) throws ClienteNaoEncontradoException, RepositorioException {
+                                                                                 ^
+  symbol:   class RepositorioException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:33: error: cannot find symbol
+    public Cliente procurar(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
+           ^
+  symbol:   class Cliente
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:33: error: cannot find symbol
+    public Cliente procurar(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
+                                               ^
+  symbol:   class ClienteNaoEncontradoException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:33: error: cannot find symbol
+    public Cliente procurar(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
+                                                                              ^
+  symbol:   class RepositorioException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:37: error: cannot find symbol
+    public Cliente procurarPorConta(String numero) throws ClienteNaoEncontradoException, RepositorioException {
+           ^
+  symbol:   class Cliente
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:37: error: cannot find symbol
+    public Cliente procurarPorConta(String numero) throws ClienteNaoEncontradoException, RepositorioException {
+                                                          ^
+  symbol:   class ClienteNaoEncontradoException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:37: error: cannot find symbol
+    public Cliente procurarPorConta(String numero) throws ClienteNaoEncontradoException, RepositorioException {
+                                                                                         ^
+  symbol:   class RepositorioException
+  location: class CadastroCliente
+C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:18: error: cannot find symbol
+                throw new ClienteJaCadastradoException(cliente.getCpf());
+                          ^
+  symbol:   class ClienteJaCadastradoException
+  location: class CadastroCliente
+18 errors

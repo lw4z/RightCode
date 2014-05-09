@@ -75,7 +75,7 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 		
 		public void iniciarAplicacao() throws SQLException, CodigoInvalidoException, NomeInvalidoException, AlunoNaoEncontradoException, DisciplinaNaoEncontradaException, UsuarioNaoEncontradoException, DisciplinaListaVaziaException, AlunolistaVaziaException, UsuariolistaVaziaException, FiltrolistaVaziaException, FiltroNaoEncontradoException, JavaException, IOException, NaoCompiladoException, NenhumArquivoCompiladoException, AlunoTurmaInvalidaException, FiltroConteudoInvalidoException{
 			
-			testeCompilador();
+			//testeCompilador();
 			//iniciar();
 
 		}
@@ -207,14 +207,15 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 			
 			
 		}
-                
+                /*
                 public void testeCompilador() throws JavaException, IOException{
                     ArrayList <Filtro> filtros = new ArrayList <>();
+                    this.disicplina= disciplina;
                         this.filtro1 = new Filtro("main","main",0);
 			this.filtro2 = new Filtro("Get","get",0);
 			filtros.add(filtro1);
 			filtros.add(filtro2);
-			Compilador compiler = new Compilador(filtros);
+			Compilador compiler = new Compilador(filtros, disciplina);
 			try {
 				compiler.Compilar("ProjectSingleton");
 				//compiler.Compilar("ArquivosTeste");
@@ -223,6 +224,7 @@ import br.fafica.pi1.rightcode.usuario.Usuario;
 				e.printStackTrace();
 			}
                 }
+                */
 		
 }
 
