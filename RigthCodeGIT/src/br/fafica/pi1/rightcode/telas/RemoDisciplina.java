@@ -7,12 +7,13 @@
 package br.fafica.pi1.rightcode.telas;
 
 import br.fafica.pi1.rightcode.exception.CodigoInvalidoException;
-import br.fafica.pi1.rightcode.exception.DisciplinaListaVaziaException;
 import br.fafica.pi1.rightcode.exception.FiltroNaoEncontradoException;
 import br.fafica.pi1.rightcode.exception.NomeInvalidoException;
 import br.fafica.pi1.rightcode.exception.FiltrolistaVaziaException;
 import br.fafica.pi1.rightcode.exception.UsuarioNaoEncontradoException;
-import br.fafica.pi1.rightcode.filtro.Filtro;
+import br.fafica.pi1.rightcode.disciplina.Disciplina;
+import br.fafica.pi1.rightcode.exception.DisciplinaListaVaziaException;
+import br.fafica.pi1.rightcode.exception.DisciplinaNaoEncontradaException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,27 +26,27 @@ import javax.swing.table.DefaultTableModel;
  
  * @author EDWARd
  */
-public class ConfigurarFiltro extends javax.swing.JFrame {
+public class RemoDisciplina extends javax.swing.JFrame {
     private Fachada fachada;
     private Usuario usuario;
     private Compiler telaAnt;
-    private ArrayList <Filtro> arrayFiltro;
+    private ArrayList <Disciplina> arrayDisciplina;
     /**
      * ates new form ConfigurarTelas000
     */
-  public ConfigurarFiltro() {
+  public RemoDisciplina() {
         initComponents();
         this.setLocationRelativeTo(null);
         fachada = Fachada.getInstancia();
-        arrayFiltro = new ArrayList<>();
+        arrayDisciplina = new ArrayList<>();
     }
-  public ConfigurarFiltro(Compiler telaAnt,Usuario usuario){
+  public RemoDisciplina(Compiler telaAnt,Usuario usuario){
       this();
       this.usuario = usuario;
       this.telaAnt=telaAnt;
       fachada = Fachada.getInstancia();
   }
-     private static final long serialVersionUID = 1L;
+     
    
 
     /**
@@ -60,11 +61,9 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaFiltro = new javax.swing.JTable();
-        NovoF = new javax.swing.JButton();
+        tabelaDisciplina = new javax.swing.JTable();
         Concluir = new javax.swing.JButton();
         remover = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
@@ -76,6 +75,9 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         setForeground(new java.awt.Color(255, 204, 204));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
@@ -83,7 +85,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Selecionar Filtros");
+        jLabel1.setText("Remover Disciplinas");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 36, -1, -1));
 
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,19 +99,20 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
             }
         });
 
-        tabelaFiltro.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaDisciplina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Codigo", "Nome", "Cod.Usuario", "Selecione"
+                "Nome", "Selecione"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -120,19 +123,11 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelaFiltro.setColumnSelectionAllowed(true);
-        jScrollPane1.setViewportView(tabelaFiltro);
-        tabelaFiltro.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        tabelaDisciplina.setColumnSelectionAllowed(true);
+        jScrollPane1.setViewportView(tabelaDisciplina);
+        tabelaDisciplina.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 61, 392, 287));
-
-        NovoF.setText("Novo");
-        NovoF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NovoFActionPerformed(evt);
-            }
-        });
-        getContentPane().add(NovoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 366, 110, -1));
 
         Concluir.setText("Concluir");
         Concluir.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +135,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 ConcluirActionPerformed(evt);
             }
         });
-        getContentPane().add(Concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 366, 110, -1));
+        getContentPane().add(Concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 110, -1));
 
         remover.setText("Remover");
         remover.addActionListener(new java.awt.event.ActionListener() {
@@ -148,15 +143,7 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
                 removerActionPerformed(evt);
             }
         });
-        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 366, 110, -1));
-
-        jButton1.setText("Utilizar Filtros");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 32, -1, -1));
+        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 110, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 410));
@@ -165,102 +152,83 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConcluirActionPerformed
-        this.telaAnt.setEnabled(true);
-        this.setVisible(false);
+         
         try {
+             this.telaAnt.setEnabled(true);
+        this.setVisible(false);
             this.telaAnt.carregarListaCombo();
-        } catch (DisciplinaListaVaziaException ex) {
-           
-        } catch (SQLException ex) {
+        } catch (DisciplinaListaVaziaException | SQLException ex) {
            
         }
+      
         
         
     }//GEN-LAST:event_ConcluirActionPerformed
 
-    private void NovoFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovoFActionPerformed
-        System.out.println("Teste CofigureFiltro codigo "+usuario.getCodigo());
-        this.setEnabled(false);
-        new TelaNovoFiltro(this,usuario).setVisible(true);
-        
-    }//GEN-LAST:event_NovoFActionPerformed
-
     private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
-        try {
-           
-//           int linha = tabelaFiltro.getSelectedRow();
-//           Filtro f = Fachada.getInstancia().ListaFiltro().get(linha);
-//           fachada.RemoverFiltro(f);
-//           carregarJTable();
-            ArrayList <Filtro>removidos= new ArrayList();
-            for (int id = 0; id < tabelaFiltro.getRowCount(); id++) { 
+        ArrayList <Disciplina>removidos= new ArrayList();
+            for (int id = 0; id < tabelaDisciplina.getRowCount(); id++) { 
               
-              if ((Boolean)tabelaFiltro.getValueAt(id,3) == true){
-                  Filtro u = fachada.ListaFiltro().get(id);
-                  
-                  fachada.RemoverFiltro(u);
-                 carregarJTable();
+              if ((Boolean)tabelaDisciplina.getValueAt(id,1) == true){
+                  try {                 
+                      Disciplina u = fachada.ListaDisciplina().get(id);
+                      
+                      fachada.RemoverDisciplina(u);
+                      
+                      carregarJTable();
+                  } catch (          DisciplinaListaVaziaException | SQLException | DisciplinaNaoEncontradaException | CodigoInvalidoException ex) {
+                      Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
                   }
-               }
-                 carregarJTable();
-        } catch (FiltrolistaVaziaException e) {
+            try {
+                carregarJTable();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
            
-        } catch (SQLException ex) {
-        	ex.printStackTrace();
-			JOptionPane.showMessageDialog(null, ex.getMessage());
-		} catch (FiltroNaoEncontradoException ex) {
-            Logger.getLogger(ConfigurarFiltro.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (CodigoInvalidoException ex) {
-            Logger.getLogger(ConfigurarFiltro.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         
+            } catch (DisciplinaListaVaziaException ex) {
+                Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                     
     }//GEN-LAST:event_removerActionPerformed
-
+        }
+       
+    }
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.telaAnt.setEnabled(true);
+        
+        try {
+            this.telaAnt.setEnabled(true);
         this.setVisible(false);
+            this.telaAnt.carregarListaCombo();
+        } catch (DisciplinaListaVaziaException ex) {
+            
+        } catch (SQLException ex) {
+            
+        }
     }//GEN-LAST:event_formWindowClosing
 
     private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
         try {
             carregarJTable();
         } catch (SQLException ex) {
-            Logger.getLogger(ConfigurarFiltro.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FiltrolistaVaziaException ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage());
+            Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+     
+        } catch (DisciplinaListaVaziaException ex) {
+            Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jScrollPane1MouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            arrayFiltro=filtroSelecionados();
-            telaAnt.filtrosSelecionados(arrayFiltro);
-            
-        } catch (SQLException ex) {
-        	this.setVisible(true);
-        	ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (FiltrolistaVaziaException ex) {
-        	this.setVisible(true);
-        	JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (ArrayIndexOutOfBoundsException ex) {
-        	this.setVisible(true);
-        	JOptionPane.showMessageDialog(null, "Selecione um filtro");
-        }catch (UsuarioNaoEncontradoException ex) {
-        	this.setVisible(true);
-        	JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (CodigoInvalidoException ex) {
-        	this.setVisible(true);
-        	JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (FiltroNaoEncontradoException ex) {
-        	this.setVisible(true);
-        	JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jScrollPane1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseDragged
         
     }//GEN-LAST:event_jScrollPane1MouseDragged
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        try {
+            carregarJTable();
+        } catch (SQLException | DisciplinaListaVaziaException ex) {
+            Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+      
+        }
+    }//GEN-LAST:event_formWindowActivated
     
     /**
      * @param args the command line arguments
@@ -292,41 +260,35 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ConfigurarFiltro().setVisible(true);
+                new RemoDisciplina().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Concluir;
-    private javax.swing.JButton NovoF;
-    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton remover;
-    private javax.swing.JTable tabelaFiltro;
+    private javax.swing.JTable tabelaDisciplina;
     // End of variables declaration//GEN-END:variables
 
     
     //metodo teste
-    void carregarJTable() throws SQLException, FiltrolistaVaziaException {
+    void carregarJTable() throws SQLException, DisciplinaListaVaziaException {
        // Fachada fachada = Fachada.getInstancia();
-        ArrayList<Filtro> listaFiltro = new ArrayList<Filtro>();
-        listaFiltro = fachada.ListaFiltro();
+        ArrayList<Disciplina> listaDisciplina= new ArrayList<Disciplina>();
+        listaDisciplina = fachada.ListaDisciplina();
         
         DefaultTableModel modelo = new DefaultTableModel(){
              @Override
+             
             public Class getColumnClass(int column) {
                 switch (column) {
                     case 0:
-                        return Integer.class;
-                    case 1:
                         return String.class;
-                    case 2:
-                        return Integer.class;
-                   
                     default:
                         return Boolean.class;
                 }
@@ -335,23 +297,25 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
         };
             
         
-        modelo.addColumn("Código");
+        
         modelo.addColumn("Nome");
-        modelo.addColumn("Cod.Usuario");
         modelo.addColumn("Selecione");
         
-       if(listaFiltro==null){
-           modelo.addRow(new Object [] {null,null,null,null});
+       if(listaDisciplina==null){
+           modelo.addRow(new Object [] {null,null});
        }
         
-        for (int i = 0; i < listaFiltro.size(); i++) {
-            Filtro f = listaFiltro.get(i);
+        for (int i = 0; i < listaDisciplina.size(); i++) {
+            Disciplina d= listaDisciplina.get(i);
             //System.out.println(f.toString());
             // Alimenta as linhas de dados  
-            modelo.addRow(new Object [] {f.getCodigo(),f.getNome(),f.getCodigo_usuario(), false});
+            
+            modelo.addRow(new Object [] {d.getNome() ,false});
         }
-       
-          tabelaFiltro.setModel(modelo); 
+    
+
+        
+          tabelaDisciplina.setModel(modelo); 
                  
       
         
@@ -360,47 +324,47 @@ public class ConfigurarFiltro extends javax.swing.JFrame {
 
     } 
     
-     public Filtro buscaFiltro() throws SQLException, FiltrolistaVaziaException{
+     public Disciplina buscaDisciplina() throws SQLException, DisciplinaListaVaziaException {
         //Fachada fachada = Fachada.getInstancia();
-        ArrayList<Filtro> listaFiltro;
-        listaFiltro = fachada.ListaFiltro();
+        ArrayList<Disciplina> listaDisciplina;
+        listaDisciplina= fachada.ListaDisciplina();
          
-        Filtro buscaFiltro = null;
-        for(Filtro Filtro: listaFiltro){
-            buscaFiltro = Filtro;
+        Disciplina buscaFiltro = null;
+        for(Disciplina Disciplina: listaDisciplina){
+            buscaFiltro = Disciplina;
         }
         return buscaFiltro;
     }
      
      
-     public ArrayList filtroSelecionados() throws SQLException, FiltrolistaVaziaException, UsuarioNaoEncontradoException, CodigoInvalidoException, FiltroNaoEncontradoException{        
-//        int []linha = tabelaFiltro.getSelectedRows();
-//       Filtro u =null;
+     public ArrayList disciplinaSelecionadas() throws SQLException, DisciplinaListaVaziaException{        
+//        int []linha = tabelaDisciplina.getSelectedRows();
+//       Disciplina u =null;
 //         for(int i=0;i<linha.length;i++){
 //            u = Fachada.getInstancia().ListaFiltro().get(linha[i]);
 //            arrayFiltro.add(u);
 //          }
 //         //somente para exibir no console
 //           for(int i=0;i<arrayFiltro.size();i++){
-//   		 Filtro f=arrayFiltro.get(i);
+//   		 Disciplina f=arrayFiltro.get(i);
 //   		 System.out.println("\n"+f.getNome());
 //          }
 //          JOptionPane.showMessageDialog(null,"Filtros Ativados!"); 
-          for (int id = 0; id < tabelaFiltro.getRowCount(); id++) { 
+          for (int id = 0; id < tabelaDisciplina.getRowCount(); id++) { 
               
-              if ((Boolean)tabelaFiltro.getValueAt(id,3) == true){
-                  Filtro u = fachada.ListaFiltro().get(id);
-                  arrayFiltro.add(u);
+              if ((Boolean)tabelaDisciplina.getValueAt(id,3) == true){
+                  Disciplina u = fachada.ListaDisciplina().get(id);
+                  arrayDisciplina.add(u);
                   System.out.println("\n"+u.getNome());
                    }
                }
-             if(!arrayFiltro.isEmpty()){
+             if(!arrayDisciplina.isEmpty()){
                  JOptionPane.showMessageDialog(null,"Filtros Ativados!");
              } else {
                  JOptionPane.showMessageDialog(null,"Filtros Não Selecionados!");
              }
            
-            return arrayFiltro;
+            return arrayDisciplina;
         }
     }
 

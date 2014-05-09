@@ -105,13 +105,17 @@ public class Compiler extends javax.swing.JFrame {
         CampoResultado = new javax.swing.JTextPane();
         compilaArquivos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         ComboD = new javax.swing.JComboBox();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         exportar = new javax.swing.JLabel();
         adcionarDis = new javax.swing.JLabel();
         logorightode = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jMenuBar5 = new javax.swing.JMenuBar();
@@ -195,12 +199,16 @@ public class Compiler extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 80, 70));
 
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 50, -1, 30));
+
         ComboD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDActionPerformed(evt);
             }
         });
         getContentPane().add(ComboD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 210, -1));
+        getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 100, 100));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -220,7 +228,7 @@ public class Compiler extends javax.swing.JFrame {
         adcionarDis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         adcionarDis.setForeground(new java.awt.Color(255, 255, 255));
         adcionarDis.setText("Adicionar");
-        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 80, -1));
+        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 70, -1));
 
         logorightode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/rcodelogo.png"))); // NOI18N
         getContentPane().add(logorightode, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, 90));
@@ -229,6 +237,20 @@ public class Compiler extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Filtros");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 560, 50, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Remover");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/remover.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 30, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
@@ -289,11 +311,6 @@ public class Compiler extends javax.swing.JFrame {
         }
        
     }//GEN-LAST:event_acessoFiltrosActionPerformed
-
-    private void adcionarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adcionarDisciplinaActionPerformed
-         this.setEnabled(false);
-         new TelaNovaDisciplina(this,this.usuario).setVisible(true);
-    }//GEN-LAST:event_adcionarDisciplinaActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
          this.telaAnt.setEnabled(true);
@@ -378,6 +395,28 @@ public class Compiler extends javax.swing.JFrame {
         Ajuda();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void adcionarDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adcionarDisciplinaActionPerformed
+        this.setEnabled(false);
+        new TelaNovaDisciplina(this,this.usuario).setVisible(true);
+    }//GEN-LAST:event_adcionarDisciplinaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            if(fachada.ListaDisciplina().isEmpty()){
+            }
+            else{
+
+                this.setEnabled(false);
+                new RemoDisciplina(this,this.usuario).setVisible(true);
+            }
+        } catch (DisciplinaListaVaziaException ex) {
+            JOptionPane.showMessageDialog(null,"Não há Disicplinas Cadastradas!");
+        } catch (SQLException ex) {
+            Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -460,6 +499,7 @@ public class Compiler extends javax.swing.JFrame {
         listaDisciplina = fachada.ListaDisciplina();
 
         ComboD.removeAllItems();
+        
         for (int i = 0; i < listaDisciplina.size(); i++) {
             Disciplina d = listaDisciplina.get(i);
          ComboD.addItem(d.getNome( ));
@@ -576,12 +616,15 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JButton compilaArquivos;
     private javax.swing.JLabel exportar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -598,6 +641,7 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel logorightode;
     // End of variables declaration//GEN-END:variables
 }
