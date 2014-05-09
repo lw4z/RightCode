@@ -142,7 +142,7 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
         } catch (NomeInvalidoException ex) {
             JOptionPane.showMessageDialog(null,ex.getMessage());
         }
-
+        
     }//GEN-LAST:event_salvarDActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
