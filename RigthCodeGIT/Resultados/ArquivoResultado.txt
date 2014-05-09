@@ -1,96 +1,75 @@
 
-####################################################
-Data: Fri May 09 02:14:08 BRT 2014
-Disciplina: Poo2 - 2ºUnidade
-Caminho do Arquivo: C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java
+===============================================================
+Disciplina: Programação
+Data: Fri May 09 08:37:57 BRT 2014
+Caminho do Arquivo: C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco/Launch.java
 Compilação: Arquivo Não compilado
 
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:3: error: package aula03.com.fafica.util does not exist
-import aula03.com.fafica.util.RepositorioException;
-                             ^
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:7: error: cannot find symbol
-    private IRepositorioCliente clientes;
-            ^
-  symbol:   class IRepositorioCliente
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:9: error: cannot find symbol
-    public CadastroCliente(IRepositorioCliente repositorio) {
-                           ^
-  symbol:   class IRepositorioCliente
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:13: error: cannot find symbol
-    public void cadastrar(Cliente cliente) throws ClienteJaCadastradoException, RepositorioException {
-                          ^
-  symbol:   class Cliente
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:13: error: cannot find symbol
-    public void cadastrar(Cliente cliente) throws ClienteJaCadastradoException, RepositorioException {
-                                                  ^
-  symbol:   class ClienteJaCadastradoException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:13: error: cannot find symbol
-    public void cadastrar(Cliente cliente) throws ClienteJaCadastradoException, RepositorioException {
-                                                                                ^
-  symbol:   class RepositorioException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:25: error: cannot find symbol
-    public void remover(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
-                                           ^
-  symbol:   class ClienteNaoEncontradoException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:25: error: cannot find symbol
-    public void remover(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
-                                                                          ^
-  symbol:   class RepositorioException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:29: error: cannot find symbol
-    public void atualizar(Cliente cliente) throws ClienteNaoEncontradoException, RepositorioException {
-                          ^
-  symbol:   class Cliente
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:29: error: cannot find symbol
-    public void atualizar(Cliente cliente) throws ClienteNaoEncontradoException, RepositorioException {
-                                                  ^
-  symbol:   class ClienteNaoEncontradoException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:29: error: cannot find symbol
-    public void atualizar(Cliente cliente) throws ClienteNaoEncontradoException, RepositorioException {
-                                                                                 ^
-  symbol:   class RepositorioException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:33: error: cannot find symbol
-    public Cliente procurar(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
-           ^
-  symbol:   class Cliente
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:33: error: cannot find symbol
-    public Cliente procurar(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
-                                               ^
-  symbol:   class ClienteNaoEncontradoException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:33: error: cannot find symbol
-    public Cliente procurar(String cpf) throws ClienteNaoEncontradoException, RepositorioException {
-                                                                              ^
-  symbol:   class RepositorioException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:37: error: cannot find symbol
-    public Cliente procurarPorConta(String numero) throws ClienteNaoEncontradoException, RepositorioException {
-           ^
-  symbol:   class Cliente
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:37: error: cannot find symbol
-    public Cliente procurarPorConta(String numero) throws ClienteNaoEncontradoException, RepositorioException {
-                                                          ^
-  symbol:   class ClienteNaoEncontradoException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:37: error: cannot find symbol
-    public Cliente procurarPorConta(String numero) throws ClienteNaoEncontradoException, RepositorioException {
-                                                                                         ^
-  symbol:   class RepositorioException
-  location: class CadastroCliente
-C:\Users\EDWARD\Desktop\PooContent\aula03-2013.2\aula03\com\fafica\cliente\CadastroCliente.java:18: error: cannot find symbol
-                throw new ClienteJaCadastradoException(cliente.getCpf());
-                          ^
-  symbol:   class ClienteJaCadastradoException
-  location: class CadastroCliente
-18 errors
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:11: error: cannot find symbol
+		Singleton s1 = Singleton.getInstance();
+		^
+  symbol:   class Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:11: error: cannot find symbol
+		Singleton s1 = Singleton.getInstance();
+		               ^
+  symbol:   variable Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:12: error: cannot find symbol
+		Singleton s2 = Singleton.getInstance();
+		^
+  symbol:   class Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:12: error: cannot find symbol
+		Singleton s2 = Singleton.getInstance();
+		               ^
+  symbol:   variable Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:13: error: cannot find symbol
+		Singleton s3 = Singleton.getInstance();
+		^
+  symbol:   class Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:13: error: cannot find symbol
+		Singleton s3 = Singleton.getInstance();
+		               ^
+  symbol:   variable Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:14: error: cannot find symbol
+		Singleton s4 = Singleton.getInstance();
+		^
+  symbol:   class Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:14: error: cannot find symbol
+		Singleton s4 = Singleton.getInstance();
+		               ^
+  symbol:   variable Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:15: error: cannot find symbol
+		Singleton s5 = Singleton.getInstance();
+		^
+  symbol:   class Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:15: error: cannot find symbol
+		Singleton s5 = Singleton.getInstance();
+		               ^
+  symbol:   variable Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:16: error: cannot find symbol
+		Singleton s6 = Singleton.getInstance();
+		^
+  symbol:   class Singleton
+  location: class Launch
+C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco\Launch.java:16: error: cannot find symbol
+		Singleton s6 = Singleton.getInstance();
+		               ^
+  symbol:   variable Singleton
+  location: class Launch
+12 errors
+
+===============================================================
+Disciplina: Programação
+Data: Fri May 09 08:37:57 BRT 2014
+Caminho do Arquivo: C:\Users\EDWARD\Desktop\Workspace\Projeto_Teste_Singleton_5\src\br\edu\fafica\alunocinco/Singleton.java
+Compilação: Arquivo Compilador com Sucesso
+

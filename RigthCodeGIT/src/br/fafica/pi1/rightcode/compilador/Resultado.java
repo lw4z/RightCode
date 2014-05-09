@@ -89,11 +89,11 @@ public class Resultado {
 //return "Data: "+this.data+"\nCaminho do Arquivo: "+this.caminho+"\nCompila��o: "+this.compilou+"\n";
 	public String toString(){
 		if(buscaFiltro == null){
-			return "####################################################\n"+
-					"Data: "+this.data +"\nDisciplina: "+this.disciplina.getNome()+"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
+			return "===============================================================\n"+
+					"Disciplina: "+this.disciplina.getNome()+"\nData: "+this.data +"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
 		}else{
-			return "####################################################\n"+
-					"Data: "+this.data +"\nDiscip´lina: "+this.disciplina.getNome()+"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
+			return "================================================================\n"+
+					"Disciplina: "+this.disciplina.getNome()+"\nData: "+this.data +"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
 					"\n"+arrayString()+""+this.erro;
 		}
 	}
