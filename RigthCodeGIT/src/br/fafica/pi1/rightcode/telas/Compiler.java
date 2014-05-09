@@ -100,10 +100,7 @@ public class Compiler extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         acessoFiltros = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabelaDisciplina = new javax.swing.JTable();
         adcionarDisciplina = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoResultado = new javax.swing.JTextPane();
@@ -115,7 +112,6 @@ public class Compiler extends javax.swing.JFrame {
         exportar = new javax.swing.JLabel();
         adcionarDis = new javax.swing.JLabel();
         logorightode = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
@@ -155,10 +151,6 @@ public class Compiler extends javax.swing.JFrame {
         jLabel1.setText("Resultado");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, -1, 20));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Selecione a Disciplina");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 90, -1, -1));
-
         acessoFiltros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/filtros03.png"))); // NOI18N
         acessoFiltros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,33 +158,6 @@ public class Compiler extends javax.swing.JFrame {
             }
         });
         getContentPane().add(acessoFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 80, 70));
-
-        tabelaDisciplina.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Nome ", "Cod.Usuario"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(tabelaDisciplina);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 110, 250, 440));
 
         adcionarDisciplina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Sign_Add_Icon_32.png"))); // NOI18N
         adcionarDisciplina.setBorder(null);
@@ -249,17 +214,14 @@ public class Compiler extends javax.swing.JFrame {
         getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 80, -1));
 
         logorightode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/rcodelogo.png"))); // NOI18N
-        getContentPane().add(logorightode, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, -1, 90));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 1270, 670));
+        getContentPane().add(logorightode, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, 90));
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Filtros");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 60, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 670));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 670));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
@@ -532,15 +494,15 @@ public class Compiler extends javax.swing.JFrame {
         return disciplinaBusca;
     }
     
-   /* public Disciplina DisciplinaSelecionada() throws DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, SQLException, DisciplinaNaoEncontradaException, CodigoInvalidoException{
-       Object linha = ComboD.getSelectedItem();
+    public Disciplina DisciplinaSelecionada() throws DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, DisciplinaListaVaziaException, SQLException, DisciplinaNaoEncontradaException, CodigoInvalidoException{
+        int item = ComboD.getSelectedIndex();
          //int linha = tabelaDisciplina.getSelectedIndex();
-         Disciplina d = fachada.ListaDisciplina();
+         Disciplina d = fachada.ListaDisciplina().get(item);
        //Disciplina d = fachada.ListaDisciplina().get(linha);
             fachada.BuscarDisciplina(d.getCodigo());
             return d;
     }
-    /*
+    
     /*public Aluno AlunoSelecionado() throws AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, AlunolistaVaziaException, SQLException, AlunoNaoEncontradoException, CodigoInvalidoException{
     int linha =tabelaAluno.getSelectedRow();
     Aluno al=fachada.ListaAluno().get(linha);
@@ -567,8 +529,6 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -586,8 +546,6 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel logorightode;
-    private javax.swing.JTable tabelaDisciplina;
     // End of variables declaration//GEN-END:variables
 }
