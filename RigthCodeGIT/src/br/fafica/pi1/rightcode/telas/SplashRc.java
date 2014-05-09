@@ -73,7 +73,7 @@ public class SplashRc extends JWindow {
             if ( "Nimbus".equals( info.getName() ) ) {  
                UIManager.setLookAndFeel( info.getClassName() );
               
-                 UIManager.put("nimbusBase", new Color(59, 130, 47 ));
+                 UIManager.put("nimbusBase", new Color(59, 110, 47 ));
                  UIManager.put("nimbusBlueGrey", new Color(150,195,180));
                  UIManager.put("control", new Color(100,197,200));
                

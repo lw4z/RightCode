@@ -101,13 +101,10 @@ public class Compiler extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         acessoFiltros = new javax.swing.JButton();
         adcionarDisciplina = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        CampoResultado = new javax.swing.JTextPane();
         compilaArquivos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         ComboD = new javax.swing.JComboBox();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         exportar = new javax.swing.JLabel();
@@ -116,8 +113,12 @@ public class Compiler extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        CampoResultado = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
+        canvas1 = new java.awt.Canvas();
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -154,10 +155,10 @@ public class Compiler extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Resultado");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 90, -1, 20));
 
         acessoFiltros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/filtros03.png"))); // NOI18N
         acessoFiltros.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +166,7 @@ public class Compiler extends javax.swing.JFrame {
                 acessoFiltrosActionPerformed(evt);
             }
         });
-        getContentPane().add(acessoFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, 80, 70));
+        getContentPane().add(acessoFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 80, 70));
 
         adcionarDisciplina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Sign_Add_Icon_32.png"))); // NOI18N
         adcionarDisciplina.setBorder(null);
@@ -175,13 +176,7 @@ public class Compiler extends javax.swing.JFrame {
                 adcionarDisciplinaActionPerformed(evt);
             }
         });
-        getContentPane().add(adcionarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, 30));
-
-        CampoResultado.setEditable(false);
-        CampoResultado.setBackground(new java.awt.Color(153, 153, 153));
-        jScrollPane1.setViewportView(CampoResultado);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 103, 1040, 450));
+        getContentPane().add(adcionarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 30, 30));
 
         compilaArquivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Fileexplorer-green-64.png"))); // NOI18N
         compilaArquivos.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +184,7 @@ public class Compiler extends javax.swing.JFrame {
                 compilaArquivosActionPerformed(evt);
             }
         });
-        getContentPane().add(compilaArquivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 80, 70));
+        getContentPane().add(compilaArquivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, 80, 70));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/abrir2.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -197,39 +192,37 @@ public class Compiler extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 80, 70));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 600, 80, 70));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 50, -1, 30));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, 30));
 
-        ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione uma disciplina" }));
         ComboD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDActionPerformed(evt);
             }
         });
-        getContentPane().add(ComboD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 210, -1));
-        getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 100, 100));
+        getContentPane().add(ComboD, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 210, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Disciplinas:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Verificar");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 560, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, -1, -1));
 
         exportar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         exportar.setForeground(new java.awt.Color(255, 255, 255));
         exportar.setText("Exportar");
-        getContentPane().add(exportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, -1, -1));
+        getContentPane().add(exportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, -1, -1));
 
         adcionarDis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         adcionarDis.setForeground(new java.awt.Color(255, 255, 255));
         adcionarDis.setText("Adicionar");
-        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 70, -1));
+        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 70, -1));
 
         logorightode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/rcodelogo.png"))); // NOI18N
         getContentPane().add(logorightode, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, 90));
@@ -237,12 +230,12 @@ public class Compiler extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Filtros");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 560, 50, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, 50, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Remover");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/remover.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -251,14 +244,34 @@ public class Compiler extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 30, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 30, 30));
+
+        jInternalFrame1.setBackground(new java.awt.Color(0, 0, 153));
+        jInternalFrame1.setBorder(null);
+        jInternalFrame1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jInternalFrame1.setEnabled(false);
+        jInternalFrame1.setFocusable(false);
+        jInternalFrame1.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/compilar.png"))); // NOI18N
+        jInternalFrame1.setVerifyInputWhenFocusTarget(false);
+        jInternalFrame1.setVisible(true);
+
+        CampoResultado.setEditable(false);
+        CampoResultado.setBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane1.setViewportView(CampoResultado);
+
+        jInternalFrame1.getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 1040, 480));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 680));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 680));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+        getContentPane().add(canvas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 640, -1, -1));
+
+        jMenuBar5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jMenu7.setText("Menu");
 
@@ -614,18 +627,19 @@ public class Compiler extends javax.swing.JFrame {
     private javax.swing.JButton acessoFiltros;
     private javax.swing.JLabel adcionarDis;
     private javax.swing.JButton adcionarDisciplina;
+    private java.awt.Canvas canvas1;
     private javax.swing.JButton compilaArquivos;
     private javax.swing.JLabel exportar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
