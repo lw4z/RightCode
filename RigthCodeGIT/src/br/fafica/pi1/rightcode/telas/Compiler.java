@@ -202,6 +202,7 @@ public class Compiler extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 50, -1, 30));
 
+        ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione uma disciplina" }));
         ComboD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDActionPerformed(evt);
