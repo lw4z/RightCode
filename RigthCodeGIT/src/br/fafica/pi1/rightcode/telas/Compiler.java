@@ -153,7 +153,7 @@ public class Compiler extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Resultado");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, -1, 20));
@@ -166,15 +166,15 @@ public class Compiler extends javax.swing.JFrame {
         });
         getContentPane().add(acessoFiltros, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, 80, 70));
 
-        adcionarDisciplina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Sign_Add_Icon_32.png"))); // NOI18N
+        adcionarDisciplina.setBackground(new java.awt.Color(0, 102, 255));
+        adcionarDisciplina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/adicionar2.png"))); // NOI18N
         adcionarDisciplina.setBorder(null);
-        adcionarDisciplina.setBorderPainted(false);
         adcionarDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adcionarDisciplinaActionPerformed(evt);
             }
         });
-        getContentPane().add(adcionarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, 30));
+        getContentPane().add(adcionarDisciplina, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 40, 40));
 
         CampoResultado.setEditable(false);
         CampoResultado.setBackground(new java.awt.Color(153, 153, 153));
@@ -200,20 +200,21 @@ public class Compiler extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 590, 80, 70));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 50, -1, 30));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, 30));
 
+        ComboD.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione uma disciplina" }));
         ComboD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDActionPerformed(evt);
             }
         });
-        getContentPane().add(ComboD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 210, -1));
+        getContentPane().add(ComboD, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 210, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Disciplinas:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -228,7 +229,7 @@ public class Compiler extends javax.swing.JFrame {
         adcionarDis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         adcionarDis.setForeground(new java.awt.Color(255, 255, 255));
         adcionarDis.setText("Adicionar");
-        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 70, -1));
+        getContentPane().add(adcionarDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 70, -1));
 
         logorightode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/rcodelogo.png"))); // NOI18N
         getContentPane().add(logorightode, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, 90));
@@ -241,16 +242,17 @@ public class Compiler extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Remover");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/remover.png"))); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 102, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/remover2.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 30, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 40, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
@@ -410,7 +412,7 @@ public class Compiler extends javax.swing.JFrame {
                 new RemoDisciplina(this,this.usuario).setVisible(true);
             }
         } catch (DisciplinaListaVaziaException ex) {
-            JOptionPane.showMessageDialog(null,"Não há Disicplinas Cadastradas!");
+            JOptionPane.showMessageDialog(null,"Não Há Disiciplinas Cadastradas!");
         } catch (SQLException ex) {
             Logger.getLogger(Compiler.class.getName()).log(Level.SEVERE, null, ex);
         }

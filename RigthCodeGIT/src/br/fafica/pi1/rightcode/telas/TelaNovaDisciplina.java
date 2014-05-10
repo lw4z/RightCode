@@ -80,8 +80,9 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
         });
         getContentPane().add(Concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 207, 95, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Descrição");
+        jLabel3.setText("Descrição:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 62, -1, -1));
 
         salvarD.setText("Salvar");
@@ -92,8 +93,9 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
         });
         getContentPane().add(salvarD, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 207, 90, -1));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome da Disciplina");
+        jLabel1.setText("Nome da Disciplina:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 11, -1, -1));
 
         campoDescricao.setColumns(20);
