@@ -14,16 +14,18 @@ public class Resultado {
 	private ArrayList <BuscaFiltro> buscaFiltro;
 	private Date data;
 	private String erro;
+        private String autor;
         private Disciplina disciplina;
 
    
 	
-	public Resultado(String caminho,boolean compilou,String erro, Disciplina disciplina){
+	public Resultado(String caminho,boolean compilou,String erro, Disciplina disciplina,String autor){
 		if(compilou){
 			this.compilou = "Arquivo Compilador com Sucesso";
 		}else{
 			this.compilou = "Arquivo Não compilado";
 		}
+                this.autor = autor;
 		this.disciplina=disciplina;
 		this.caminho = caminho;
 		this.buscaFiltro = null;
@@ -35,11 +37,19 @@ public class Resultado {
 		return caminho;
 	}
         
+        public String getAutor(){
+            return autor;
+        }
+        
+        public void setAutor(String autor){
+            this.autor = autor;
+        }
+        
         public Disciplina getDisciplina() {
         return disciplina;
        }
         
-       public void setAluno(Disciplina disciplina) {
+       public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
 
@@ -90,10 +100,14 @@ public class Resultado {
 	public String toString(){
 		if(buscaFiltro == null){
 			return "===============================================================\n"+
-					"Disciplina: "+this.disciplina.getNome()+"\nData: "+this.data +"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
+                                        "Autor: "+autor+"\n"+
+					"Disciplina: "+this.disciplina.getNome()+"\nData: "+this.data +"\n"+
+                                        "Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+"\n"+this.erro;
 		}else{
 			return "================================================================\n"+
-					"Disciplina: "+this.disciplina.getNome()+"\nData: "+this.data +"\n"+"Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
+                                        "Autor: "+autor+"\n"+
+					"Disciplina: "+this.disciplina.getNome()+"\nData: "+this.data +"\n"+
+                                        "Caminho do Arquivo: "+this.caminho + "\nCompilação: "+this.compilou+
 					"\n"+arrayString()+""+this.erro;
 		}
 	}

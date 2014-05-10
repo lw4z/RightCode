@@ -22,6 +22,8 @@ import javax.tools.ToolProvider;
 import br.fafica.pi1.rightcode.exception.NenhumArquivoCompiladoException;
 import br.fafica.pi1.rightcode.filtro.Filtro;
 import java.io.FileOutputStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CompilerFerramentas {
 
@@ -30,6 +32,7 @@ public class CompilerFerramentas {
 	private Resultado resultado;
 	private boolean nenhumaClasseCompilada;
 	private Charset utf8 = StandardCharsets.UTF_8;
+        private String autor="";
         private Disciplina disciplina;
 	
 	public CompilerFerramentas (ArrayList <Filtro> filtros, Disciplina disciplina){
@@ -82,12 +85,24 @@ public class CompilerFerramentas {
 				arquivoCompleto += linha+" ";
 		}
 		arquivoCompleto = arquivoCompleto.trim();
-		System.out.println(arquivoCompleto); //Linha temporaria
+                System.out.println(arquivoCompleto); //Linha temporaria
+                
+                //Pegando o AUTOR @author.*@ ***
+                Pattern p = Pattern.compile("@author.*@");
+		Matcher matcher = p.matcher(arquivoCompleto);
+		
+		while (matcher.find()){
+                        autor = matcher.group();
+			System.out.println(matcher.group());
+		}
+                if(autor==""){
+                    autor = "Autor Não Informado";
+                }
 		
 		
 		if(resposta == 0){
 			System.out.println(caminho+"Retornou True e o arquivo foi Compilado");
-			resultado = new Resultado(caminho,true,erro, disciplina);
+			resultado = new Resultado(caminho,true,erro, disciplina, autor);
 			
 			if(!filtros.isEmpty()){
 				
@@ -118,7 +133,7 @@ public class CompilerFerramentas {
 			return true;
 		}else{
 			//System.out.println(caminho+"Retornou False e o arquivo não foi Compilado");
-			resultado = new Resultado(caminho,false,erro, disciplina);
+			resultado = new Resultado(caminho,false,erro, disciplina, autor);
 			System.err.println(resultado);
 			repositorioResultado.setArquivoResultado(resultado);
 			file.deleteOnExit();
