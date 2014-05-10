@@ -12,7 +12,7 @@ public class DataSourceFactory {
 	
 	public DataSourceFactory() {
 		// Definimos aqui aqual � o tipo de DAO que usaremos
-		this.type = DataSourceType.ARRAYLIST;
+		this.type = DataSourceType.ORACLE;
 	}
 	
 	public DataSourceType getType() {
