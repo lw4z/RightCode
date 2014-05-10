@@ -70,7 +70,7 @@ public class RemoDisciplina extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Configurar Filtros");
+        setTitle("Remover Disciplinas");
         setBackground(new java.awt.Color(51, 0, 255));
         setForeground(new java.awt.Color(255, 204, 204));
         setResizable(false);
