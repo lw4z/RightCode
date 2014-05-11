@@ -106,7 +106,7 @@ public class RightCode extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, -1));
 
         jButton4.setText("Sair");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class RightCode extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 90, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 90, -1));
 
         jScrollPane1.setToolTipText("");
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,7 +150,7 @@ public class RightCode extends javax.swing.JFrame {
         tabelaUsuario.setName("Usuario"); // NOI18N
         jScrollPane1.setViewportView(tabelaUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 78, 310, 180));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 78, 320, 190));
 
         remover.setText("Remover Usuário");
         remover.addActionListener(new java.awt.event.ActionListener() {
@@ -158,14 +158,14 @@ public class RightCode extends javax.swing.JFrame {
                 removerActionPerformed(evt);
             }
         });
-        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Lista de Usuários");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 330));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 320));
 
         jMenu1.setText("Menu");
 
