@@ -136,6 +136,7 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
         try {
             this.fachada.AdicionarDisciplina(disciplina);
             limparCampos();
+            this.telaAnt.carregarListaCombo();
             JOptionPane.showMessageDialog(null,"Disciplina Cadastrada!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,ex.getMessage());
@@ -143,6 +144,8 @@ public class TelaNovaDisciplina extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,ex.getMessage());
         } catch (NomeInvalidoException ex) {
             JOptionPane.showMessageDialog(null,ex.getMessage());
+        } catch (DisciplinaListaVaziaException ex) {
+           
         }
         
     }//GEN-LAST:event_salvarDActionPerformed

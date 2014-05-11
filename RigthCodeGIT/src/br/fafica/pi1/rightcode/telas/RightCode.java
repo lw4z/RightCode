@@ -70,8 +70,6 @@ public class RightCode extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -89,17 +87,6 @@ public class RightCode extends javax.swing.JFrame {
         setForeground(java.awt.Color.green);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome do Usuário:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 230, -1));
-
         jButton1.setText("Entrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,13 +95,13 @@ public class RightCode extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 90, -1));
 
-        jButton2.setText("Criar Usuário");
+        jButton2.setText("Novo Usuário");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jButton4.setText("Sair");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +111,7 @@ public class RightCode extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 90, -1));
 
+        jScrollPane1.setToolTipText("");
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jScrollPane1MouseClicked(evt);
@@ -132,7 +120,7 @@ public class RightCode extends javax.swing.JFrame {
 
         tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null}
             },
             new String [] {
                 "Codigo", "Nome"
@@ -153,6 +141,8 @@ public class RightCode extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabelaUsuario.setToolTipText("Clique para Selecionar ");
+        tabelaUsuario.setName("Usuario"); // NOI18N
         jScrollPane1.setViewportView(tabelaUsuario);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 88, 346, 170));
@@ -163,7 +153,7 @@ public class RightCode extends javax.swing.JFrame {
                 removerActionPerformed(evt);
             }
         });
-        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 330));
@@ -241,22 +231,18 @@ public class RightCode extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AdicionarUsuario(jTextField1.getText());
-        jTextField1.setText("");
-        try {
-            carregarUsuario();
-        } catch (SQLException ex) {
-        	ex.printStackTrace();
-			JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (UsuariolistaVaziaException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-            //Logger.getLogger(RightCode.class.getName()).log(Level.SEVERE, null, ex);
-        }
+      
+         String nome= JOptionPane.showInputDialog("Nome do Usuario:");
+        AdicionarUsuario(nome);
+     
+      try {
+          carregarUsuario();     } catch (SQLException ex) {
+     	ex.printStackTrace();			JOptionPane.showMessageDialog(null, ex.getMessage());
+       } catch (UsuariolistaVaziaException ex) {
+          JOptionPane.showMessageDialog(null, ex.getMessage());
+          //Logger.getLogger(RightCode.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         System.exit(0);
@@ -369,13 +355,11 @@ public class RightCode extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton remover;
     private javax.swing.JTable tabelaUsuario;
     // End of variables declaration//GEN-END:variables
