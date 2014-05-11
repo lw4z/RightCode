@@ -102,8 +102,7 @@ public class RemoDisciplina extends javax.swing.JFrame {
 
         tabelaDisciplina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Selecione"
@@ -124,9 +123,11 @@ public class RemoDisciplina extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabelaDisciplina.setToolTipText("Clique para Selecionar");
         tabelaDisciplina.setColumnSelectionAllowed(true);
         jScrollPane1.setViewportView(tabelaDisciplina);
         tabelaDisciplina.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        tabelaDisciplina.getAccessibleContext().setAccessibleName("");
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 61, 392, 287));
 
@@ -139,6 +140,7 @@ public class RemoDisciplina extends javax.swing.JFrame {
         getContentPane().add(Concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 110, -1));
 
         remover.setText("Remover");
+        remover.setToolTipText("Selecione Para Remover");
         remover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removerActionPerformed(evt);
@@ -168,6 +170,7 @@ public class RemoDisciplina extends javax.swing.JFrame {
 
     private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
         ArrayList <Disciplina>removidos= new ArrayList();
+            
             for (int id = 0; id < tabelaDisciplina.getRowCount(); id++) { 
               
               if ((Boolean)tabelaDisciplina.getValueAt(id,1) == true){
@@ -175,19 +178,20 @@ public class RemoDisciplina extends javax.swing.JFrame {
                       Disciplina u = fachada.ListaDisciplina().get(id);
                       
                       fachada.RemoverDisciplina(u);
-                      
+                      JOptionPane.showMessageDialog(null,"Disciplina Removida");
+                      this.telaAnt.carregarListaCombo();
                       carregarJTable();
                   } catch (          DisciplinaListaVaziaException | SQLException | DisciplinaNaoEncontradaException | CodigoInvalidoException ex) {
-                      Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+                      
                   }
             try {
                 carregarJTable();
-                
+                 this.telaAnt.carregarListaCombo();
             } catch (SQLException ex) {
-                Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+                
            
             } catch (DisciplinaListaVaziaException ex) {
-                Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Não há mais Disciplinas Cadastradas");
             }
                      
     }//GEN-LAST:event_removerActionPerformed
@@ -226,7 +230,7 @@ public class RemoDisciplina extends javax.swing.JFrame {
         try {
             carregarJTable();
         } catch (SQLException | DisciplinaListaVaziaException ex) {
-            Logger.getLogger(RemoDisciplina.class.getName()).log(Level.SEVERE, null, ex);
+        
       
         }
     }//GEN-LAST:event_formWindowActivated

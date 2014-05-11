@@ -77,11 +77,12 @@
         <Component class="javax.swing.JTable" name="tabelaDisciplina">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="2">
+              <Table columnCount="2" rowCount="0">
                 <Column editable="false" title="Nome" type="java.lang.String"/>
                 <Column editable="false" title="Selecione" type="java.lang.Boolean"/>
               </Table>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Clique para Selecionar"/>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="3">
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
@@ -111,6 +112,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
         </Component>
       </SubComponents>
     </Container>
@@ -130,6 +134,7 @@
     <Component class="javax.swing.JButton" name="remover">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remover"/>
+        <Property name="toolTipText" type="java.lang.String" value="Selecione Para Remover"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removerActionPerformed"/>

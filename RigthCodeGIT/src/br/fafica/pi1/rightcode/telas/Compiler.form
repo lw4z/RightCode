@@ -153,6 +153,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/br/fafica/pi1/rightcode/telas/icones/filtros03.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Configura Filtros"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acessoFiltrosActionPerformed"/>
@@ -171,6 +172,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/br/fafica/pi1/rightcode/telas/icones/adicionar2.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Adiciona Disicpinas"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -214,6 +216,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/br/fafica/pi1/rightcode/telas/icones/Fileexplorer-green-64.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Abre Arquivos para verifica-los"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="compilaArquivosActionPerformed"/>
@@ -229,6 +232,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/br/fafica/pi1/rightcode/telas/icones/abrir2.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Exporta O resultado  "/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -256,7 +260,7 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
-            <StringItem index="0" value="Selecione uma disciplina"/>
+            <StringItem index="0" value="Sem disciplinas"/>
           </StringArray>
         </Property>
       </Properties>
@@ -385,6 +389,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/br/fafica/pi1/rightcode/telas/icones/remover2.png"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Remove Disciplinas"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>

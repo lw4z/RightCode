@@ -158,6 +158,7 @@ public class Compiler extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, -1, 20));
 
         acessoFiltros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/filtros03.png"))); // NOI18N
+        acessoFiltros.setToolTipText("Configura Filtros");
         acessoFiltros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acessoFiltrosActionPerformed(evt);
@@ -167,6 +168,7 @@ public class Compiler extends javax.swing.JFrame {
 
         adcionarDisciplina.setBackground(new java.awt.Color(0, 102, 255));
         adcionarDisciplina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/adicionar2.png"))); // NOI18N
+        adcionarDisciplina.setToolTipText("Adiciona Disicpinas");
         adcionarDisciplina.setBorder(null);
         adcionarDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +185,7 @@ public class Compiler extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 990, 450));
 
         compilaArquivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/Fileexplorer-green-64.png"))); // NOI18N
+        compilaArquivos.setToolTipText("Abre Arquivos para verifica-los");
         compilaArquivos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compilaArquivosActionPerformed(evt);
@@ -191,6 +194,7 @@ public class Compiler extends javax.swing.JFrame {
         getContentPane().add(compilaArquivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 590, 80, 70));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/abrir2.png"))); // NOI18N
+        jButton1.setToolTipText("Exporta O resultado  ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -202,7 +206,7 @@ public class Compiler extends javax.swing.JFrame {
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, 30));
 
         ComboD.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione uma disciplina" }));
+        ComboD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sem disciplinas" }));
         ComboD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDActionPerformed(evt);
@@ -245,6 +249,7 @@ public class Compiler extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 102, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/remover2.png"))); // NOI18N
+        jButton2.setToolTipText("Remove Disciplinas");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
