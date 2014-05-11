@@ -89,6 +89,7 @@ public class RightCode extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Adicionar Usuario");
         setForeground(java.awt.Color.green);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Entrar");
@@ -113,7 +114,7 @@ public class RightCode extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 90, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 90, -1));
 
         jScrollPane1.setToolTipText("");
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -149,7 +150,7 @@ public class RightCode extends javax.swing.JFrame {
         tabelaUsuario.setName("Usuario"); // NOI18N
         jScrollPane1.setViewportView(tabelaUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 78, 346, 180));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 78, 310, 180));
 
         remover.setText("Remover Usuário");
         remover.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +165,7 @@ public class RightCode extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fafica/pi1/rightcode/telas/icones/back.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 330));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 330));
 
         jMenu1.setText("Menu");
 

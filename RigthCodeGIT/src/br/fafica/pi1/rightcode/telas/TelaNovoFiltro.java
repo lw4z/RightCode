@@ -150,7 +150,7 @@ public class TelaNovoFiltro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarFActionPerformed(java.awt.event.ActionEvent evt) throws FiltroConteudoInvalidoException {//GEN-FIRST:event_salvarFActionPerformed
-       System.out.println("Teste TelaNovoUsuario codigo "+usuario.getCodigo());
+       System.out.println("Teste TelaNovoFiltro codigo "+usuario.getCodigo());
        Filtro filtro = new Filtro(campoNome.getText(),campoConteudo.getText(),usuario.getCodigo());
        int i= filtro.getCodigo();
        System.out.println(filtro);
@@ -160,11 +160,11 @@ public class TelaNovoFiltro extends javax.swing.JFrame {
         limparCampos();
         JOptionPane.showMessageDialog(null,"Filtro Cadastrado!");
         } catch (SQLException ex) {
-        	JOptionPane.showMessageDialog(null,ex.getMessage());
+        	
         } catch (CodigoInvalidoException ex) {
-        	JOptionPane.showMessageDialog(null,ex.getMessage());
+        	
         } catch (NomeInvalidoException ex) {
-        	JOptionPane.showMessageDialog(null,ex.getMessage());
+        	
         }
        
     }//GEN-LAST:event_salvarFActionPerformed
